@@ -2,15 +2,52 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
+const partners = [
+  {
+    id: 1,
+    image: '/Img/ACCUEIL_Partenaire001.png',
+    title: 'Partenaire 1',
+    description: 'Description 1'
+  },
+  {
+    id: 2,
+    image: '/Img/ACCUEIL_Partenaire002.png',
+    title: 'Partenaire 2',
+    description: 'Description 2'
+  },
+  {
+    id: 3,
+    image: '/Img/ACCUEIL_Partenaire003.png',
+    title: 'Partenaire 3',
+    description: 'Description 3'
+  },
+  {
+    id: 4,
+    image: '/Img/ACCUEIL_Partenaire004.png',
+    title: 'Partenaire 4',
+    description: 'Description 4'
+  },
+  {
+    id: 5,
+    image: '/Img/ACCUEIL_Partenaire005.png',
+    title: 'Partenaire 5',
+    description: 'Description 5'
+  },
+  {
+    id: 6,
+    image: '/Img/ACCUEIL_Partenaire006.png',
+    title: 'Partenaire 6',
+    description: 'Description 6'
+  }
+]
+
 export default function CarouselPartenaires() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const totalItems = 6 // Number of partners
-  const itemsPerView = 3
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((current) => 
-        current >= totalItems / itemsPerView - 1 ? 0 : current + 1
+        current >= partners.length - 3 ? 0 : current + 1
       )
     }, 3000)
 
@@ -18,21 +55,33 @@ export default function CarouselPartenaires() {
   }, [])
 
   return (
-    <div className="Acc_carousel-container" id="PARTENAIRES_Container">
-      <h2>Ils nous font confiance :</h2>
+    <>
       <div className="Acc_carousel-wrapper">
         <div 
           className="Acc_carousel"
           style={{
-            transform: `translateX(-${currentIndex * (100 / (totalItems / itemsPerView))}%)`
+            transform: `translateX(-${currentIndex * (100/3)}%)`
           }}
         >
-          {/* Add your carousel items here */}
+          {partners.map((partner) => (
+            <div key={partner.id} className="Acc_carousel-item">
+              <div>
+                <Image 
+                  src={partner.image}
+                  alt={partner.title}
+                  width={2000}
+                  height={2000}
+                />
+                <h3>{partner.title}</h3>
+                <p>{partner.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       
       <div className="Acc_carousel-indicators">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(partners.length - 2)].map((_, i) => (
           <span 
             key={i}
             className={`Acc_dot ${currentIndex === i ? 'active' : ''}`}
@@ -40,6 +89,6 @@ export default function CarouselPartenaires() {
           />
         ))}
       </div>
-    </div>
+    </>
   )
 }

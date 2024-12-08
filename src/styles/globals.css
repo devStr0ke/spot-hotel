@@ -8,10 +8,10 @@
   --grey003: #99a58f;
   --grey004: #99a58f;
   --grey005: #3e4f47;
-  --Shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  --Shadow-hover: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
-  --Shadow-Mobile: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-  --Shadow-Mobile-hover: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+  --shadow-Mobile: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  --shadow-Mobile-hover: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 /*#region ========MOBILE*/
@@ -56,7 +56,7 @@
           align-items: center;
           padding: 0 2.4%;
           background-color: var(--grey002);
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
           color: var(--grey001);
       }
       
@@ -67,7 +67,7 @@
           aspect-ratio: 1/1;
           background-color: var(--grey005);
           margin: 2%;
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
       }
   
       /* Bouton du menu à droite (hamburger menu) */
@@ -113,7 +113,7 @@
           right: 0;
           width: 40%;
           background-color: var(--grey002);
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
           padding: 0;
           margin: 0;
   
@@ -198,16 +198,16 @@
               display: block; /* Change l'image en un élément de type bloc pour qu'elle respecte les marges/padding */
               object-fit: cover; /* Ajuste l'image pour bien remplir sa boîte tout en gardant son ratio */
               border-radius: 0 0 0 8vh;
-              box-shadow: var(--Shadow-Mobile);
+              box-shadow: var(--shadow-Mobile);
               
   
           }
   
       .OFFRE_INT_AnnoncesButton {
-          width: 33.3vw;
-          height: 3vh;
+          width: 50%;
+          height: 4vh;
           display: inline-block;
-  
+          white-space: nowrap;
           margin-top:5%;
           padding: 1.5% 3%;
           background-color: var(--grey005);
@@ -217,13 +217,13 @@
           font-weight: 400;
           font-size: 1.75vh;
           color: var(--grey001);
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
           transition: box-shadow 0.2s ease, font-weight 0.2s ease;
          
       }
   
           .OFFRE_INT_AnnoncesButton:hover {
-              box-shadow: var(--Shadow-Mobile-hover);
+              box-shadow: var(--shadow-Mobile-hover);
           }
   /*#endregion ====OFFRE INT*/   
   
@@ -277,7 +277,7 @@
           height: auto;
           margin-bottom: 2.5vh; /* Espace sous l'image */
           border-radius: 8vh 0 0 0;
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
       }
   
       /* Colonne de droite : xp-square (les carrés) */
@@ -299,7 +299,7 @@
           background-color: var(--grey005);
           width: 90vw; /* Largeur responsive en fonction de l'écran */
           border-radius:2vh;
-          box-shadow:var(--Shadow-Mobile);
+          box-shadow:var(--shadow-Mobile);
       }
   
           /* Centrer h3 et p à l'intérieur de chaque xp-square */
@@ -309,9 +309,9 @@
               font-size: 6vw;
               font-family: "Heebo", sans-serif;
               font-weight: 600;
-              line-height: 0.5vw;
+              line-height: 8vw;
               text-align: center;
-              margin-top:3vw;
+              margin-bottom:3vw;
           }
   
           .xp-square p {
@@ -320,7 +320,7 @@
               font-size: 3vw;
               font-family: "Heebo", sans-serif;
               font-weight: 400;
-              line-height: 0.5vw;
+              line-height: 2vw;
               text-align: center;
               margin-top: 6vw;
           }
@@ -368,11 +368,11 @@
   
       /* Chaque élément du carrousel */
       .Acc_carousel-item {
-          width: calc(100vw / 3); /* Chaque élément prend un tiers de la zone visible */
-          /*height: 5vh;*/
-          padding: 2vw;
-          box-sizing: border-box;
-          text-align: center;
+        flex: 0 0 33.33%; /* This prevents the items from growing/shrinking */
+        width: 33.33%;
+        padding: 2vw;
+        box-sizing: border-box;
+        text-align: center;
           
       }
   
@@ -381,7 +381,7 @@
               width: 100%;
               aspect-ratio: 1/1; /* Maintient un format carré */
               object-fit: cover;
-              /*box-shadow: var(--Shadow-Mobile);*/
+              /*box-shadow: var(--shadow-Mobile);*/
           }
   
           .Acc_carousel-item p {
@@ -398,7 +398,7 @@
               font-size: 3vw;
               font-family: "Heebo", sans-serif;
               font-weight: 600;
-              line-height: 1.5vw;
+              line-height: 5vw;
               text-align: center;
               margin: 0;
               padding: 0;
@@ -409,18 +409,18 @@
               width: 100%;
               aspect-ratio: 2/1;
               background-color: var(--grey001);
-              box-shadow: var(--Shadow-Mobile);
+              box-shadow: var(--shadow-Mobile);
           }
   
       /* Style des points d'indication */
       .Acc_carousel-indicators {
-          margin-top: 2vh;
+          margin-top: 1vh;
           display: flex;
           justify-content: center;
       }
   
       .Acc_dot {
-          height: 2vw;
+          height: 4vw;
           aspect-ratio: 1/1;
           margin: 0.5vw;
           border-radius: 50%;
@@ -568,7 +568,7 @@
               width: 100%;
               height: auto;
               border-radius: 0 0 0 4vh;
-              box-shadow: var(--Shadow-Mobile);
+              box-shadow: var(--shadow-Mobile);
           }
   
           .Ann_carousel-item h3 {
@@ -635,7 +635,7 @@
           padding: 4vh;
           position: relative;
           border-radius: 0 8vh 0 0;
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
       }
   
       #Ann_overlay-image {
@@ -643,7 +643,7 @@
   
   
           border-radius: 0 6vh 0 0;
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
           /*flex-shrink: 0;*/ /* Empêche le redimensionnement de l'image */
       }
   
@@ -779,7 +779,7 @@
           padding: 3vh;
           border-radius: 0 4vh 0 0;
           background-color: var(--grey002);
-          box-shadow:var(--Shadow-Mobile);
+          box-shadow:var(--shadow-Mobile);
       }
   
       .info-block {
@@ -907,7 +907,7 @@
           width: 40%;
           text-align: center;
           border-radius: 2vh 0 0 0;
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
           color: var(--grey001); /* Couleur des liens */
           font-size: 2vh;
           font-family: "Heebo", sans-serif;
@@ -917,7 +917,7 @@
       }
   
           .submit-button:hover {
-              box-shadow: var(--Shadow-Mobile-hover);
+              box-shadow: var(--shadow-Mobile-hover);
           }
   
       /* Overlay de confirmation */
@@ -941,7 +941,7 @@
           margin: 6vh 3vw;
           text-align: center;
           border-radius: 0 0 0 8vh;
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
       }
   
           .overlay-content p {
@@ -973,12 +973,12 @@
               margin-top: 2vh;
               align-self: flex-start;
               border-radius: 3vh;
-              box-shadow: var(--Shadow-Mobile);
+              box-shadow: var(--shadow-Mobile);
               transition: box-shadow 0.2s ease;
           }
   
               .overlay-content button:hover {
-                  box-shadow: var(--Shadow-Mobile-hover);
+                  box-shadow: var(--shadow-Mobile-hover);
               }
       /*#endregion Page contact*/
   
@@ -999,7 +999,7 @@
           background-color: var(--grey005);
           padding: 0 2vh;
           border-radius: 0 2vh 0 0;
-          box-shadow: var(--Shadow-Mobile);
+          box-shadow: var(--shadow-Mobile);
           color: var(--grey001);
           font-size: 4vh;
           text-decoration: none;
@@ -1009,7 +1009,7 @@
       }
   
           .ML_Close:hover {
-              box-shadow: var(--Shadow-Mobile-hover);
+              box-shadow: var(--shadow-Mobile-hover);
           }
   
       .ML_BodyLike h1 {
@@ -1086,7 +1086,7 @@
             width: 100%;
             height: 4vw;
             background-color: var(--grey002);
-            box-shadow: var(--Shadow);
+            box-shadow: var(--shadow);
             align-items: center;
             z-index: 1000;
             transition: top 0.5s ease-in-out;
@@ -1197,23 +1197,24 @@
   
   
           .OFFRE_INT_AnnoncesButton {
-              width: 33.3%;
+              width: 50%;
               display: inline-block;
+              white-space: nowrap;
               padding: 1.5vh 3vw;
               background-color: var(--grey005);
               border-radius: 0 0 2vw 0;
-              margin-top: 3vh;
+              margin-top: 8vh;
               text-decoration: none;
               font-family: "Heebo", sans-serif;
               font-weight: 400;
               font-size: 1.25vw;
               color: var(--grey001);
-              box-shadow: var(--Shadow);
+              box-shadow: var(--shadow);
               transition: box-shadow 0.2s ease, font-weight 0.2s ease;
           }
   
               .OFFRE_INT_AnnoncesButton:hover {
-                  box-shadow: var(--Shadow-hover);
+                  box-shadow: var(--shadow-hover);
               }
   
           #OFFRE_INT img {
@@ -1222,7 +1223,7 @@
               display: block; /* Change l'image en un élément de type bloc pour qu'elle respecte les marges/padding */
               object-fit: cover; /* Ajuste l'image pour bien remplir sa boîte tout en gardant son ratio */
               border-radius: 0 0 0 8vw;
-              box-shadow: var(--Shadow);
+              box-shadow: var(--shadow);
           }
           /*#endregion ====OFFRE INT*/
   
@@ -1253,6 +1254,7 @@
                   font-family: "Heebo", sans-serif;
                   font-weight: 700;
                   line-height: 1.125;
+                  margin-bottom: 8%;
               }
   
               .text-content p {
@@ -1271,14 +1273,15 @@
               gap: 5%; /*espace etre l'image et le texte*/
               width: 70%;
               background-color: var(--grey004);
-              box-shadow: var(--Shadow);
+              box-shadow: var(--shadow);
+              margin-top: 3%;
           }
   
           .xp-square {
-              width: 20%; /* Taille des carrés */
-              aspect-ratio: 1/1;
+              width: 30%; /* Taille des carrés */
+              
               /*background-color:aqua;*/
-              padding: 2.5%;
+              padding: 5%;
               display: flex;
               flex-direction: column; /* Empile les éléments p et h3 */
               justify-content: center; /* Centre verticalement les éléments dans chaque carré */
@@ -1313,7 +1316,7 @@
               display: block; /* Change l'image en un élément de type bloc pour qu'elle respecte les marges/padding */
               object-fit: cover; /* Ajuste l'image pour bien remplir sa boîte tout en gardant son ratio */
               border-radius: 0 0 0 8vw;
-              box-shadow: var(--Shadow);
+              box-shadow: var(--shadow);
           }
           /*#endregion ====A PROPOS*/
   
@@ -1345,7 +1348,7 @@
           /* Wrapper pour le carrousel */
           .Acc_carousel-wrapper {
               overflow: hidden; /* Cache les éléments qui dépassent de la zone visible */
-              width: 80vw; /* Ajuste la largeur selon la taille désirée */
+              width: 100%; /* Ajuste la largeur selon la taille désirée */
               margin: 0 auto;
           }
   
@@ -1357,11 +1360,12 @@
   
           /* Chaque élément du carrousel */
           .Acc_carousel-item {
-              width: calc(100vw / 3); /* Chaque élément prend un tiers de la zone visible */
-              padding: 2vw;
-              box-sizing: border-box;
-              text-align: center;
-          }
+            flex: 0 0 33.33%; /* This prevents the items from growing/shrinking */
+            width: 33.33%;
+            padding: 2vw;
+            box-sizing: border-box;
+            text-align: center;
+        }
   
               /* Style pour l'image et les textes dans chaque rectangle */
               .Acc_carousel-item img {
@@ -1384,7 +1388,7 @@
                   font-size: 1vw;
                   font-family: "Heebo", sans-serif;
                   font-weight: 600;
-                  line-height: 0.5;
+                  line-height: 2;
                   text-align: center;
               }
   
@@ -1392,7 +1396,7 @@
                   padding: 5% 0;
                   width: 100%;
                   aspect-ratio: 2/1;
-                  background-color: var(--grey001);
+                  
               }
   
           /* Style des points d'indication */
@@ -1403,7 +1407,7 @@
           }
   
           .Acc_dot {
-              height: 1vh;
+              height: 2vh;
               aspect-ratio:1/1;
               margin: 0.5vh;
               border-radius: 50%;
@@ -1547,7 +1551,7 @@
                   width: 100%;
                   height: auto;
                   border-radius:0 0 0 8vh;
-                  box-shadow:var(--Shadow);
+                  box-shadow:var(--shadow);
               }
   
               .Ann_carousel-item h3 {
@@ -1610,12 +1614,12 @@
               padding: 4vh;
               position: relative;
               border-radius:0 16vh 0 0;
-              box-shadow:var(--Shadow);
+              box-shadow:var(--shadow);
           }
   
           #Ann_overlay-image {
               border-radius: 0 12vh 0 0;
-              box-shadow:var(--Shadow);
+              box-shadow:var(--shadow);
           }
   
           .Ann_overlay-text {
@@ -1697,7 +1701,7 @@
               height: auto;
               object-fit: cover;
               margin: 4vh;
-              box-shadow: var(--Shadow);
+              box-shadow: var(--shadow);
               border-radius: 0 16vh 0 0;
               /*filter: brightness(0.5);*/
           }
@@ -1839,11 +1843,11 @@
               margin-top: 2vh;
               align-self: flex-start;
               border-radius: 3vh 0 0 0;
-              box-shadow: var(--Shadow);
+              box-shadow: var(--shadow);
               transition: box-shadow 0.2s ease;
           }
               .submit-button:hover {
-                  box-shadow: var(--Shadow-hover);
+                  box-shadow: var(--shadow-hover);
               }
               /* Overlay */
               .overlay {
@@ -1864,7 +1868,7 @@
               padding: 6vh 3vw;
               text-align: center;
               border-radius: 0 0 0 12vh;
-              box-shadow:var(--Shadow);
+              box-shadow:var(--shadow);
           }
               .overlay-content p {
                   font-size: 1vw;
@@ -1893,11 +1897,11 @@
                   margin-top: 2vh;
                   align-self: flex-start;
                   border-radius: 3vh;
-                  box-shadow: var(--Shadow);
+                  box-shadow: var(--shadow);
                   transition: box-shadow 0.2s ease;
               }
                   .overlay-content button:hover {
-                      box-shadow: var(--Shadow-hover);
+                      box-shadow: var(--shadow-hover);
                   }
           /*#endregion ================ Page contact*/
   
@@ -1918,7 +1922,7 @@
               background-color: var(--grey005);
               padding: 0 2vh;
               border-radius: 0 2vh 0 0;
-              box-shadow: var(--Shadow);
+              box-shadow: var(--shadow);
               color: var(--grey001);
               font-size: 4vh;
               text-decoration: none;
@@ -1927,7 +1931,7 @@
               transition: box-shadow 0.2s ease;
           }
               .ML_Close:hover {
-                  box-shadow: var(--Shadow-hover);
+                  box-shadow: var(--shadow-hover);
               }
   
           .ML_BodyLike h1 {
