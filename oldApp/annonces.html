@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Annonces</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="StyleSheet.css">
+
+    <!--JS-->
+    <script src="Script.js"></script>
+
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body id="Annonces-Page">
+
+    <!--#region NavBar-->
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <!-- Logo ou nom du site -->
+
+        </a>
+        <button class="navbar-toggle" id="navbarToggle">
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <ul class="navbar-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="annonces.html">Annonces</a></li>
+            <li><a href="index.html#APROPOS_Container">a propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#PARTENAIRES_Container">Partenaires</a></li>
+        </ul>
+    </nav>
+    <!--#endregion NavBar-->
+
+
+
+    <!--#region Navigation-->
+    <!-- Première Partie: Navigation horizontale -->
+    <div class="section-navigation">
+        <h2>Annonces</h2>
+        <div class="section-links">
+            <a href="#section1">Hôtels</a>
+            <a href="#section2">Restaurants</a>
+            <a href="#section3">Terrains</a>
+        </div>
+    </div>
+    <!--#endregion Navigation-->
+
+    <!--#region Carrousel 1-->
+    <!-- Deuxième Partie: Carrousel 1 -->
+    <section id="section1" class="Ann_carousel-section">
+        <h2>Hôtels</h2>
+        <div class="Ann_carousel">
+            <div class="Ann_carousel-items" data-carousel="0">
+                <!-- Exemples d'éléments du carrousel -->
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(0)">
+                    <img src="Img/ANNONCES_Hotel001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(1)">
+                    <img src="Img/ANNONCES_Hotel002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(2)">
+                    <img src="Img/ANNONCES_Hotel003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(0)">
+                    <img src="Img/ANNONCES_Hotel001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(1)">
+                    <img src="Img/ANNONCES_Hotel002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(2)">
+                    <img src="Img/ANNONCES_Hotel003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(0)">
+                    <img src="Img/ANNONCES_Hotel001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(1)">
+                    <img src="Img/ANNONCES_Hotel002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayHotel(2)">
+                    <img src="Img/ANNONCES_Hotel003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <!-- Ajouter d'autres items ici -->
+            </div>
+            <div class="Ann_carousel-dots" data-carousel="0">
+                <span class="Ann_dot active" onclick="scrollCarousel(0, 0)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(1, 0)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(2, 0)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(3, 0)"></span>
+            </div>
+        </div>
+    </section>
+    <!--#endregion Carrousel 1-->
+
+    <!--#region Carrousel 2-->
+    <!-- Troisième Partie: Carrousel 2 -->
+    <section id="section2" class="Ann_carousel-section">
+        <h2>Restaurants</h2>
+        <div class="Ann_carousel">
+            <div class="Ann_carousel-items" data-carousel="1">
+                <!-- Exemples d'éléments du carrousel -->
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(0)">
+                    <img src="Img/ANNONCES_Restau001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(1)">
+                    <img src="Img/ANNONCES_Restau002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(2)">
+                    <img src="Img/ANNONCES_Restau003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>CCourte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(0)">
+                    <img src="Img/ANNONCES_Restau001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(1)">
+                    <img src="Img/ANNONCES_Restau002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(2)">
+                    <img src="Img/ANNONCES_Restau003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>CCourte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(0)">
+                    <img src="Img/ANNONCES_Restau001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(1)">
+                    <img src="Img/ANNONCES_Restau002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayRestau(2)">
+                    <img src="Img/ANNONCES_Restau003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>CCourte description du lieu</p>
+                </div>
+                <!-- Ajouter d'autres items ici -->
+            </div>
+            <div class="Ann_carousel-dots" data-carousel="1">
+                <span class="Ann_dot active" onclick="scrollCarousel(0, 1)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(1, 1)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(2, 1)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(3, 1)"></span>
+            </div>
+        </div>
+    </section>
+    <!--#endregion Carrousel 2-->
+
+    <!--#region Carrousel 3-->
+    <!-- Quatrième Partie: Carrousel 3 -->
+    <section id="section3" class="Ann_carousel-section">
+        <h2>Terrains</h2>
+        <div class="Ann_carousel">
+            <div class="Ann_carousel-items" data-carousel="2">
+                <!-- Exemples d'éléments du carrousel -->
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(0)">
+                    <img src="Img/ANNONCES_Terrain001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(1)">
+                    <img src="Img/ANNONCES_Terrain002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(2)">
+                    <img src="Img/ANNONCES_Terrain003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(0)">
+                    <img src="Img/ANNONCES_Terrain001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(1)">
+                    <img src="Img/ANNONCES_Terrain002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(2)">
+                    <img src="Img/ANNONCES_Terrain003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(0)">
+                    <img src="Img/ANNONCES_Terrain001.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(1)">
+                    <img src="Img/ANNONCES_Terrain002.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+                <div class="Ann_carousel-item" onclick="openOverlayTerrain(2)">
+                    <img src="Img/ANNONCES_Terrain003.png"
+                         alt="Description de l'image">
+                    <h3>Nom du lieu</h3>
+                    <p>Courte description du lieu</p>
+                </div>
+
+
+
+                <!-- Ajouter d'autres items ici -->
+            </div>
+            <div class="Ann_carousel-dots" data-carousel="2">
+                <span class="Ann_dot active" onclick="scrollCarousel(0, 2)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(1, 2)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(2, 2)"></span>
+                <span class="Ann_dot" onclick="scrollCarousel(3, 2)"></span>
+            </div>
+        </div>
+    </section>
+    <!--#endregion Carrousel 3-->
+
+    <!--#region Overlay-->
+    <!-- Overlay pour afficher les détails de chaque item -->
+    <div id="Ann_overlay" class="Ann_overlay">
+        <div class="Ann_overlay-content">
+            <button class="Ann_overlay-close" onclick="closeOverlay()">×</button>
+            <div class="Ann_overlay-text">
+                <h3 id="Ann_overlay-title">Titre</h3>
+                <p id="Ann_overlay-desc1">Description 1</p>
+                <p id="Ann_overlay-desc2">Description 2</p>
+                <p id="Ann_overlay-desc3">Description 3</p>
+                <p id="Ann_overlay-desc4">Description 4</p>
+                <a href="contact.html" class="Ann_overlay-button">Contactez-nous</a>
+            </div>
+            <img id="Ann_overlay-image" src="https://st4.depositphotos.com/14953852/24787/v/380/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
+                 alt="Description de l'image">
+        </div>
+    </div>
+    <!--#endregion Overlay-->
+
+
+
+
+
+
+
+</body>
+</html>

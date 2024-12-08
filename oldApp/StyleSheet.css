@@ -1,0 +1,1984 @@
+﻿
+
+/*#region VARIABLES*/
+:root {
+    /*COULEURS Mockup*/
+    /* --grey001: #F8F9FA;
+    --grey002: #CFD1D4;
+    --grey003: #A5A9AE;
+    --grey004: #5F6266;
+    --grey005: #181B1E;*/
+    /*COULEURS v1*/
+    /*--grey001: #F8F9FA;
+    --grey002: #c6d4cf;
+    --grey003: #91b3a8;
+    --grey004: #4b6d62;
+    --grey005: #134233;*/
+    /*COULEURS v2*/
+    --grey001: #edeae5;
+    --grey002: #edeae5;
+    --grey003: #99a58f;
+    --grey004: #99a58f;
+    --grey005: #3e4f47;
+    /*OMBRES*/
+    --Shadow: -8px 8px 12px rgba(0, 0, 0, 0.25);
+    --Shadow-hover: -2px 2px 8px rgba(0, 0, 0, 0.25);
+    --Shadow-Mobile: -4px 4px 6px rgba(0, 0, 0, 0.25);
+    --Shadow-Mobile-hover: -1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+/*#endregion VARIABLES*/
+
+
+
+/*#region ========MOBILE*/
+@media (orientation:portrait) {
+
+
+/*#region GLOBAL*/
+    /*Smooth le scroll lors du click sur un lien de scroll ( à propos et partenaires )*/
+    html {
+        scroll-behavior: smooth;
+        margin: 0%;
+        padding: 0%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    body {
+        height: 160%;
+        width: 100%;
+        max-width: 100%;
+        background-color: var(--grey001);
+        margin: 0%;
+        padding: 0%;
+    }
+    /*#endregion GLOBAL*/
+
+/*#region =============== Page Accueil*/
+    #accueil-page {
+        background-color: var(--grey002);
+    }
+/*#region ====NAVBAR*/
+    /* Style général pour la navbar */
+    .navbar {
+        /*position: fixed;*/ /*Fixe la barre en haut de la fenêtre*/
+        /*Avant animation d'apparition*/
+        top: 0%;
+        /*left: 0%;*/
+        /*width: 100%;*/
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2.4%;
+        background-color: var(--grey002);
+        box-shadow: var(--Shadow-Mobile);
+        color: var(--grey001);
+    }
+    
+
+    /* Logo à gauche */
+    .navbar-logo {
+        width: 8%;
+        aspect-ratio: 1/1;
+        background-color: var(--grey005);
+        margin: 2%;
+        box-shadow: var(--Shadow-Mobile);
+    }
+
+    /* Bouton du menu à droite (hamburger menu) */
+    .navbar-toggle {
+        border-style:none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 80%;
+        width: 10%;
+        background-color:var(--grey002);
+        z-index:1000;
+    }
+        /* Les lignes du bouton hamburger */
+        .navbar-toggle .line {
+            background-color: var(--grey005);
+            height: 1vw;
+            width: 100%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            margin-top:10%;
+            margin-bottom:10%;
+
+        }
+
+        /* État par défaut du hamburger */
+        .navbar-toggle.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(0.90vw, 0.90vw);
+        }
+
+        .navbar-toggle.active .line:nth-child(2) {
+            transform: rotate(-45deg) translate(0.90vw, -0.90vw);
+        }
+
+        
+    /* Style pour les liens de navigation (caché par défaut sur mobile) */
+    .navbar-links {
+        /*display: none;*/
+        flex-direction: column;
+        list-style: none;
+        position: absolute;
+        top: 5%; /* hauteur de la navbar */
+        right: 0;
+        width: 40%;
+        background-color: var(--grey002);
+        box-shadow: var(--Shadow-Mobile);
+        padding: 0;
+        margin: 0;
+
+        /*height:0;*/
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+        /* Afficher le menu lorsqu'il est activé */
+        .navbar-links.active {
+            display: flex;
+            max-height: 100%;
+        }
+        /* Liens individuels */
+        .navbar-links li {
+            text-align: right;
+
+        }
+
+        .navbar-links a {
+            display: block;
+            padding: 1.78% 7.69%;
+            text-decoration: none; /* Supprime le soulignement des liens */
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1.75vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            transition: font-weight 0.2s ease;
+        }
+            .navbar-links a:hover {
+                font-weight: 600;
+            }
+
+    
+
+    
+
+/*#endregion ====NAVBAR*/
+
+/*#region ====OFFRE INT*/
+
+
+    #OFFRE_INT {
+        width: 100%;
+        height: 70vh;
+        /*background-color: var(--grey002);*/
+        /*background-color: aqua;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center; /*cetrage vertical*/
+        justify-content: center; /*espace entre les element*/
+        padding: 0 5%;
+        text-align: center;
+        box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
+    }
+
+    #OFFRE_INT h1 {
+        width: 100%;
+        color: var(--grey005); /* Couleur des liens */
+        font-size: 2.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 700;
+        line-height: 2.5vh;
+
+    }
+
+    #OFFRE_INT p {
+        width: 100%;
+        color: var(--grey005); /* Couleur des liens */
+        font-size: 1.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        line-height: 2vh;
+        margin: 0;
+        padding: 0;
+    }
+
+        #OFFRE_INT img {
+            width: 70%; /* L'image prend x% de la largeur */
+            height: auto;
+            display: block; /* Change l'image en un élément de type bloc pour qu'elle respecte les marges/padding */
+            object-fit: cover; /* Ajuste l'image pour bien remplir sa boîte tout en gardant son ratio */
+            border-radius: 0 0 0 8vh;
+            box-shadow: var(--Shadow-Mobile);
+            
+
+        }
+
+    .OFFRE_INT_AnnoncesButton {
+        width: 33.3vw;
+        height: 3vh;
+        display: inline-block;
+
+        margin-top:5%;
+        padding: 1.5% 3%;
+        background-color: var(--grey005);
+        border-radius: 2vh;
+        text-decoration: none;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        font-size: 1.75vh;
+        color: var(--grey001);
+        box-shadow: var(--Shadow-Mobile);
+        transition: box-shadow 0.2s ease, font-weight 0.2s ease;
+       
+    }
+
+        .OFFRE_INT_AnnoncesButton:hover {
+            box-shadow: var(--Shadow-Mobile-hover);
+        }
+/*#endregion ====OFFRE INT*/   
+
+/*#region ====APROPOS*/
+    /* Styles pour le conteneur principal */
+    #APROPOS_Container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centre les éléments horizontalement */
+        justify-content: center;
+        padding: 5vh 5vw; /* Marges responsives */
+        text-align: center;
+
+        /*Ajout*/
+        background-color:var(--grey001);
+    }
+
+    /* Première ligne (text-content contenant h1 et p) */
+    .text-content {
+        margin-bottom: 5vh; /* Espace entre la première et la deuxième ligne */
+        width: 90vw; /* Utilisation d'une largeur responsive */
+    }
+        .text-content p {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1.5vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 2vh;
+        }
+        .text-content h1 {
+            margin-bottom: 2vh;
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 2.5vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 700;
+            line-height: 2.5vh;
+        }
+
+
+        /* Disposition en colonnes pour la deuxième ligne en format mobile */
+        #APROPOS_Container .row {
+            display: flex;
+            flex-direction: column; /* Les éléments sont en colonnes sur mobile */
+            align-items: center;
+            width: 100%; /* Occupe toute la largeur */
+        }
+
+    /* Colonne de gauche : l'image */
+    #APROPOS_Container img {
+        max-width: 70%; /* Image en fonction de la largeur de l'écran */
+        height: auto;
+        margin-bottom: 2.5vh; /* Espace sous l'image */
+        border-radius: 8vh 0 0 0;
+        box-shadow: var(--Shadow-Mobile);
+    }
+
+    /* Colonne de droite : xp-square (les carrés) */
+    .xp-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centre les xp-square horizontalement */
+        justify-content: center;
+        width: 100%; /* Prend toute la largeur */
+    }
+
+    /* Chaque xp-square prend toute la largeur disponible et est centré */
+    .xp-square {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2vh; /* Espace entre les xp-square */
+        background-color: var(--grey005);
+        width: 90vw; /* Largeur responsive en fonction de l'écran */
+        border-radius:2vh;
+        box-shadow:var(--Shadow-Mobile);
+    }
+
+        /* Centrer h3 et p à l'intérieur de chaque xp-square */
+        .xp-square h3 {
+            text-align: center;
+            color: var(--grey001); /* Couleur des liens */
+            font-size: 6vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 600;
+            line-height: 0.5vw;
+            text-align: center;
+            margin-top:3vw;
+        }
+
+        .xp-square p {
+            text-align: center;
+            color: var(--grey001); /* Couleur des liens */
+            font-size: 3vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 0.5vw;
+            text-align: center;
+            margin-top: 6vw;
+        }
+
+/*#endregion ====APROPOS*/
+
+/*#region ====PARTENAIRES*/
+
+    /* Style général pour la div contenant le carrousel */
+    .Acc_carousel-container {
+        text-align: center; /* Centre le titre */
+        padding: 1vw 2vh;
+        width: 100vw;
+        height: 40vh;
+        padding: 2vh;
+        box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
+        /*background-color:aqua;*/
+
+        margin-bottom: 0%;
+    }
+
+        /* Titre du carrousel */
+        .Acc_carousel-container h2 {
+            margin-bottom: 2vh;
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 2.5vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 700;
+            line-height: 2.5vh;
+        }
+
+    /* Wrapper pour le carrousel */
+    .Acc_carousel-wrapper {
+        overflow: hidden; /* Cache les éléments qui dépassent de la zone visible */
+        width: 95vw; /* Ajuste la largeur selon la taille désirée */
+        margin: 0 auto;
+        /*background-color:brown;*/
+    }
+
+    /* Carrousel défilant */
+    .Acc_carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out; /* Animation du défilement */
+    }
+
+    /* Chaque élément du carrousel */
+    .Acc_carousel-item {
+        width: calc(100vw / 3); /* Chaque élément prend un tiers de la zone visible */
+        /*height: 5vh;*/
+        padding: 2vw;
+        box-sizing: border-box;
+        text-align: center;
+        
+    }
+
+        /* Style pour l'image et les textes dans chaque rectangle */
+        .Acc_carousel-item img {
+            width: 100%;
+            aspect-ratio: 1/1; /* Maintient un format carré */
+            object-fit: cover;
+            /*box-shadow: var(--Shadow-Mobile);*/
+        }
+
+        .Acc_carousel-item p {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 2vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1.5vw;
+            text-align: center;
+        }
+
+        .Acc_carousel-item h3 {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 3vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 600;
+            line-height: 1.5vw;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .Acc_carousel-item div {
+            padding: 5% 0;
+            width: 100%;
+            aspect-ratio: 2/1;
+            background-color: var(--grey001);
+            box-shadow: var(--Shadow-Mobile);
+        }
+
+    /* Style des points d'indication */
+    .Acc_carousel-indicators {
+        margin-top: 2vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Acc_dot {
+        height: 2vw;
+        aspect-ratio: 1/1;
+        margin: 0.5vw;
+        border-radius: 50%;
+        display: inline-block;
+        border: .25vh solid var(--grey005); /* Points non actifs */
+    }
+
+        .Acc_dot.active {
+            background-color: var(--grey005); /* Point actif */
+        }
+
+
+    /*#endregion ====PARTENAIRES*/
+
+    /*#region ====MENTIONS LEGALES*/
+    #ML_Container {
+        clear: both;
+        width: 100%;
+        height: 5vh;
+        background-color: var(--grey003);
+        padding: 3vh;
+        box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
+
+        display: flex;
+        justify-content: flex-end; /* Aligne l'élément à droite */
+        align-items: center;
+    }
+
+        #ML_Container a {
+            text-align: right;
+            list-style: none;
+            text-decoration: none; /* Supprime le soulignement des liens */
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 4vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            transition: font-weight 0.2s ease;
+        }
+
+            #ML_Container a:hover {
+                font-weight: 600;
+            }
+    /*#endregion Mentions Legales*/
+/*#endregion =============== Page Accueil*/
+
+    /*#region ================= Page Annonces*/
+    #Annonces-Page {
+        background-color: var(--grey001);
+    }
+
+    .section-navigation {
+        padding-top: 3vh;
+        text-align: center;
+        padding-bottom: 3vh;
+        background-color: var(--grey004);
+    }
+
+    .section-links a {
+        margin: 0 2vw;
+        
+
+        color: var(--grey001); /* Couleur des liens */
+        font-size: 1.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        line-height: 1vh;
+        margin: 0;
+        padding: 1vh;
+    }
+
+        .section-links a:hover {
+            text-decoration: underline;
+            text-underline-offset: 1vh;
+        }
+
+    .section-navigation h2 {
+        /*width: 100%;*/
+        color: var(--grey001); /* Couleur des liens */
+        font-size: 2.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 700;
+        line-height: 1.5vh;
+    }
+
+    #section1 {
+        /*background-color: aqua;*/
+        padding-top: 2vh;
+        margin: 0;
+    }
+    #section2 {
+        background-color: var(--grey002);
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+    #section3 {
+        /*background-color: aqua;*/
+        padding-top: 2vh;
+        margin: 0;
+    }
+
+    /* Carousel Section */
+    .Ann_carousel-section {
+        margin: 5vh 0;
+        text-align: center;
+        padding-top: 2vh;
+        margin: 0;
+    }
+
+        .Ann_carousel-section h2 {
+            text-decoration: none; /* Supprime le soulignement des liens */
+           
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 2vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1vh;
+        }
+
+   
+
+    .Ann_carousel {
+        position: relative;
+        overflow: hidden;
+        width: 90%;
+        margin: 5vh auto;
+    }
+
+    .Ann_carousel-items {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .Ann_carousel-item {
+        width: 30vw;
+        text-align: center;
+        cursor: pointer;
+        margin: 1vw;
+        /*AJOUT*/
+        flex: 0 0 40%;
+        /*Chaque item occupe 20% de la largeur pour afficher 5 éléments*/ 
+            box-sizing: border-box;
+    }
+
+        .Ann_carousel-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 0 0 0 4vh;
+            box-shadow: var(--Shadow-Mobile);
+        }
+
+        .Ann_carousel-item h3 {
+            text-decoration: none; /* Supprime le soulignement des liens */
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1.5vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 800;
+            line-height: 0.25vw;
+        }
+
+        .Ann_carousel-item p {
+            text-decoration: none; /* Supprime le soulignement des liens */
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1.125vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 0.25vw;
+        }
+
+    .Ann_carousel-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 2vh;
+    }
+
+    .Ann_dot {
+        width: 1.5vh;
+        height: 1.5vh;
+        margin: 0 1.5vh;
+        border-radius: 50%;
+        border: 4px solid #333;
+        cursor: pointer;
+    }
+
+        .Ann_dot.active {
+            background-color: #333;
+        }
+
+    /* Overlay */
+    .Ann_overlay {
+        display: none;
+        /*display: block;*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Ann_overlay-content {
+        display: flex;
+        position: relative;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--grey001);
+        width: 70vw;
+        max-width: 70vw;
+        height: 75vh;
+        padding: 4vh;
+        position: relative;
+        border-radius: 0 8vh 0 0;
+        box-shadow: var(--Shadow-Mobile);
+    }
+
+    #Ann_overlay-image {
+        width: 100%; /* Prend toute la largeur du conteneur */
+
+
+        border-radius: 0 6vh 0 0;
+        box-shadow: var(--Shadow-Mobile);
+        /*flex-shrink: 0;*/ /* Empêche le redimensionnement de l'image */
+    }
+
+    .Ann_overlay-text {
+        padding: 5vw;
+
+        text-align: left;
+        width: 100%;
+        margin-bottom: 4vw;
+    }
+
+        .Ann_overlay-text h3 {
+            text-decoration: none; /* Supprime le soulignement des liens */
+       
+
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 3vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 600;
+            line-height: 1.5vh;
+        }
+
+        .Ann_overlay-text p {
+            text-decoration: none; /* Supprime le soulignement des liens */
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1.25vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1.25vh;
+        }
+
+    .Ann_overlay-close {
+        /*position: absolute;
+        top: 2vh;
+        left: 2vw;
+        background: none;
+        border: none;
+        font-size: 6vh;
+        cursor: pointer;*/
+
+        position: absolute;
+        top: 2vw;
+        left: 2vw;
+        background: none;
+        color: var(--grey005);
+        border: none;
+        font-size: 6vw;
+        padding: 1vw;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .Ann_overlay-button {
+        /*display: inline-block;*/
+        margin-top: 1vh;
+        padding: 2vh 2vw;
+        background-color: var(--grey005);
+        border-radius: 0 0 0 2vh;
+        /*text-decoration: none;*/ /* Supprime le soulignement des liens */
+        color: var(--grey001); /* Couleur des liens */
+        font-size: 1.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        line-height: 0.25vw;
+
+
+        display: block;
+        width: 70%;
+        /*padding: 3vw;*/
+        /*background-color: #007BFF;*/
+        /*color: #ffffff;*/
+        text-align: center;
+        text-decoration: none;
+        /*font-size: 4vw;
+        border-radius: 5px;
+        margin-top: 4vw;*/
+    }
+
+
+    /*#endregion ================= Page Annonces*/
+
+    /*#region Page contact*/
+    /* Structure générale de la page en version mobile */
+    .contact_BodyLike {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 1.5vh 3vw;
+        
+    }
+
+    .contact-page {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /*background-color: var(--grey001);*/
+    }
+
+    /* Cache la partie de l'image pour la version mobile */
+    .contact-image {
+        display: none;
+    }
+
+    /* Première section avec le titre et les blocs d'informations */
+    .form-column-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        
+    }
+
+    .form-title {
+        /*font-size: 24px;*/
+        margin-bottom: 1vh;
+        color: var(--grey005); /* Couleur des liens */
+        font-size: 2.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 700;
+        line-height: 5vh;
+    }
+
+    .info-blocks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1vh;
+        width: 80%;
+        margin: 1vh;
+        padding: 3vh;
+        border-radius: 0 4vh 0 0;
+        background-color: var(--grey002);
+        box-shadow:var(--Shadow-Mobile);
+    }
+
+    .info-block {
+        text-align: left;
+    }
+
+    .info-title {
+        color: var(--grey005); /* Couleur des liens */
+        font-size: 1.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 600;
+        line-height: 1.5vh;
+        margin-bottom: 0.125vh;
+    }
+
+    .info-content {
+        color: var(--grey005); /* Couleur des liens */
+        font-size: 1.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        line-height: 1.5vh;
+    }
+
+    /* Deuxième section : Formulaire de contact */
+    .input-section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /*height:80vh;*/
+        padding: 1vh 1.5vw;
+        
+    }
+
+        .input-section p {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1.5vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1vh;
+            text-align:left;
+        }
+
+        .input-title {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 2.5vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 700;
+            line-height: 5vh;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+    .input-line {
+        border: none;
+        border-bottom: 3px solid #333;
+        padding: 0.5vh 0.25vw;
+        width: 100%;
+        margin-bottom: 15px;
+        color: var(--grey005); /* Couleur des liens */
+        font-size: 1.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        line-height: 2vh;
+        text-align: left;
+        background-color: var(--grey001);
+    }
+        .input-line::placeholder {
+            color: var(--grey003); /* Couleur des liens */
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1vh;
+            text-align: left;
+        }
+        .input-line:focus {
+            outline: none;
+        }
+
+    .message-box {
+        height: 10vh;
+    }
+
+    /* Dernière section : Détails des réseaux sociaux */
+    .info-section {
+        display: flex;
+        /*display: none;*/
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .form-column-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        gap: 15px;
+    }
+
+    .contact-detail {
+        text-align: left;
+        /*width:50%;*/
+        /*margin:2vh;*/
+    }
+
+        .contact-detail p {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1.25vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1.25vh;
+        }
+
+    /* Bouton d'envoi */
+    .submit-button {
+        /*display: none;*/
+        background-color: var(--grey005);
+        border: none;
+        padding: 2vh 4vw;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        cursor: pointer;
+        width: 40%;
+        text-align: center;
+        border-radius: 2vh 0 0 0;
+        box-shadow: var(--Shadow-Mobile);
+        color: var(--grey001); /* Couleur des liens */
+        font-size: 2vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        line-height: 1.5vh;
+        transition: box-shadow 0.2s ease;
+    }
+
+        .submit-button:hover {
+            box-shadow: var(--Shadow-Mobile-hover);
+        }
+
+    /* Overlay de confirmation */
+    /* Overlay */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .overlay-content {
+        background: var(--grey001);
+        padding: 6vh 3vw;
+        margin: 6vh 3vw;
+        text-align: center;
+        border-radius: 0 0 0 8vh;
+        box-shadow: var(--Shadow-Mobile);
+    }
+
+        .overlay-content p {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 2vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 2vh;
+        }
+
+        .overlay-content h2 {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 3vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 700;
+            line-height: 3vh;
+        }
+
+        .overlay-content button {
+            background-color: var(--grey005);
+            color: var(--grey001);
+            border: none;
+            padding: 2vh 4vh;
+            font-size: 2vh;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1.125vw;
+            cursor: pointer;
+            margin-top: 2vh;
+            align-self: flex-start;
+            border-radius: 3vh;
+            box-shadow: var(--Shadow-Mobile);
+            transition: box-shadow 0.2s ease;
+        }
+
+            .overlay-content button:hover {
+                box-shadow: var(--Shadow-Mobile-hover);
+            }
+    /*#endregion Page contact*/
+
+    /*#region Mentions Légales*/
+    .ML_BodyLike {
+        /*background-color:aqua;*/
+        display: block;
+        margin-top: 4vh;
+        margin-bottom: 8vh;
+        margin-left: 6vw;
+        margin-right: 18vw;
+        height: 100%;
+        max-height: 100%;
+        text-align: left;
+    }
+
+    .ML_Close {
+        background-color: var(--grey005);
+        padding: 0 2vh;
+        border-radius: 0 2vh 0 0;
+        box-shadow: var(--Shadow-Mobile);
+        color: var(--grey001);
+        font-size: 4vh;
+        text-decoration: none;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        transition: box-shadow 0.2s ease;
+    }
+
+        .ML_Close:hover {
+            box-shadow: var(--Shadow-Mobile-hover);
+        }
+
+    .ML_BodyLike h1 {
+        color: var(--grey004);
+        margin-top: 5vh;
+
+        font-size: 4vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 700;
+        line-height: 5vh;
+    }
+
+    .ML_BodyLike h3 {
+        color: var(--grey003);
+        font-size: 2.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 400;
+        line-height: 2.5vh;
+        margin-top: 5vh;
+        margin-bottom: 0.5vh;
+    }
+
+    .ML_BodyLike p {
+        color: var(--grey005);
+        font-size: 1.5vh;
+        font-family: "Heebo", sans-serif;
+        font-weight: 500;
+        line-height: 1.5vh;
+        margin-top: 1vh;
+    }
+    /*#endregion Mentions Légales*/
+}
+
+    /*#endregion ========MOBILE*/
+
+
+
+/*#region ========PC*/
+    @media (orientation:landscape) {
+
+
+        /*#region GLOBAL*/
+        /*Smooth le scroll lors du click sur un lien de scroll ( à propos et partenaires )*/
+        html {
+            scroll-behavior: smooth;
+            margin: 0%;
+            padding: 0%;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        body {
+            /*height: 280%;*/
+            width: 100%;
+            max-width: 100%;
+            /*background-color: var(--grey002);*/
+            margin: 0%;
+            padding: 0%;
+        }
+        /*#endregion GLOBAL*/
+
+        
+
+        /*#region ====NAVBAR*/
+        /*invisibilisation du bouton hamburgenr du menu déroulant du format mobile*/
+        .navbar-toggle{
+            display:none;
+        }
+        .navbar {
+            display: flex;
+            position: fixed; /*Fixe la barre en haut de la fenêtre*/
+            /*Avant animation d'apparition*/
+            top: -10%;
+            left: 0%;
+            width: 100%;
+            height: 4vw;
+            background-color: var(--grey002);
+            box-shadow: var(--Shadow);
+            align-items: center; /*centrage vertical*/
+            z-index: 1000; /*s'assurer que la barre reste devant*/
+            /*border: solid;*/
+            /*Smooth de l'animation d'apparition*/
+            transition: top 0.5s ease-in-out; /* Animation en douceur */
+        }
+
+        /* Animation pour faire apparaître la barre de navigation */
+        @keyframes slideDown {
+            0% {
+                top: -10%;
+            }
+
+            100% {
+                top: 0%;
+            }
+        }
+
+        /* Ajouter l'animation au chargement de la page */
+        .navbar.slide {
+            animation: slideDown 1s ease forwards;
+        }
+
+        /* Logo */
+        .navbar-logo {
+            height: 80%; /* Ajuste la taille du logo */
+            aspect-ratio: 1/1;
+            background-color: var(--grey005);
+            margin: 10%;
+        }
+
+            .navbar-logo a {
+                height: 100%;
+                width: 100%;
+            }
+
+        .navbar-links {
+            list-style: none; /* Enlève les puces des éléments de la liste */
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+            /* Liens dans la barre de navigation */
+            .navbar-links li {
+                margin: 0 1.5vw; /* Espacement horizontal entre les liens */
+            }
+
+            .navbar-links a {
+                text-decoration: none; /* Supprime le soulignement des liens */
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 1vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                text-transform: uppercase;
+                transition: font-weight 0.2s ease;
+            }
+
+                .navbar-links a:hover {
+                    font-weight: 600;
+                }
+        /*#endregion ====NAVBAR*/
+
+
+        /*#region ================= Page Accueil*/
+        #accueil-page {
+            background-color:var(--grey002);
+        }
+        /*#region ====OFFRE INT*/
+        #OFFRE_INT {
+            width: 100%;
+            height: 100vh;
+            background-color: var(--grey002);
+            /*background-color: aqua;*/
+
+            padding: 5%;
+            display: flex;
+            align-items: center; /*cetrage vertical*/
+            justify-content: space-between; /*espace entre les element*/
+            gap: 1.5%; /*espace etre l'image et le texte*/
+            box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
+        }
+
+            #OFFRE_INT .text-content {
+                display: flex;
+                flex-direction: column; /* Organise les éléments en colonne */
+                justify-content: flex-start; /* Aligne les éléments en haut */
+                width: 40%; /* La colonne de texte prend x% de la largeur */
+                /*padding: 2.5%;*/
+                /*background-color: aliceblue;*/
+            }
+
+            #OFFRE_INT h1 {
+                width: 100%;
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 3vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 700;
+                line-height: 1.125;
+            }
+
+            #OFFRE_INT p {
+                width: 100%;
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 1.25vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 1.5;
+            }
+
+
+        .OFFRE_INT_AnnoncesButton {
+            width: 33.3%;
+            display: inline-block;
+            padding: 1.5vh 3vw;
+            background-color: var(--grey005);
+            border-radius: 0 0 2vw 0;
+            margin-top: 3vh;
+            text-decoration: none;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            font-size: 1.25vw;
+            color: var(--grey001);
+            box-shadow: var(--Shadow);
+            transition: box-shadow 0.2s ease, font-weight 0.2s ease;
+        }
+
+            .OFFRE_INT_AnnoncesButton:hover {
+                box-shadow: var(--Shadow-hover);
+            }
+
+        #OFFRE_INT img {
+            width: 40%; /* L'image prend x% de la largeur */
+            height: auto;
+            display: block; /* Change l'image en un élément de type bloc pour qu'elle respecte les marges/padding */
+            object-fit: cover; /* Ajuste l'image pour bien remplir sa boîte tout en gardant son ratio */
+            border-radius: 0 0 0 8vw;
+            box-shadow: var(--Shadow);
+        }
+        /*#endregion ====OFFRE INT*/
+
+        /*#region ====A PROPOS*/
+        #APROPOS_Container {
+            width: 100%;
+            height: 100vh;
+            background-color: var(--grey001);
+            padding: 5%;
+            display: flex;
+            align-items: center; /*cetrage vertical*/
+            justify-content: space-between; /*espace entre les element*/
+            gap: 1.5%; /*espace etre l'image et le texte*/
+            box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column; /* Organise les éléments en colonne */
+            justify-content: flex-start; /* Aligne les éléments en haut */
+            width: 41%; /* La colonne de texte prend x% de la largeur */
+        }
+
+            .text-content h1 {
+                width: 100%;
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 3vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 700;
+                line-height: 1.125;
+            }
+
+            .text-content p {
+                width: 100%;
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 1.25vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 1.5;
+            }
+
+        .APROPOS_xp {
+            display: flex;
+            justify-content: space-around; /*espace entre les element*/
+            align-items: center;
+            gap: 5%; /*espace etre l'image et le texte*/
+            width: 70%;
+            background-color: var(--grey004);
+            box-shadow: var(--Shadow);
+        }
+
+        .xp-square {
+            width: 20%; /* Taille des carrés */
+            aspect-ratio: 1/1;
+            /*background-color:aqua;*/
+            padding: 2.5%;
+            display: flex;
+            flex-direction: column; /* Empile les éléments p et h3 */
+            justify-content: center; /* Centre verticalement les éléments dans chaque carré */
+            align-items: center; /* Centre horizontalement les éléments */
+            text-align: center; /* Centre le texte */
+        }
+
+            .xp-square p {
+                width: 100%;
+                margin: 0;
+                color: var(--grey001); /* Couleur des liens */
+                font-size: 0.75vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 1;
+                text-align: center;
+            }
+
+            .xp-square h3 {
+                width: 100%;
+                margin: 0;
+                color: var(--grey001); /* Couleur des liens */
+                font-size: 2.5vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 700;
+                line-height: 1;
+            }
+
+        #APROPOS_Container img {
+            width: 40%; /* L'image prend x% de la largeur */
+            height: auto;
+            display: block; /* Change l'image en un élément de type bloc pour qu'elle respecte les marges/padding */
+            object-fit: cover; /* Ajuste l'image pour bien remplir sa boîte tout en gardant son ratio */
+            border-radius: 0 0 0 8vw;
+            box-shadow: var(--Shadow);
+        }
+        /*#endregion ====A PROPOS*/
+
+        /*#region ====PARTENAIRES*/
+
+        /* Style général pour la div contenant le carrousel */
+        .Acc_carousel-container {
+            text-align: center; /* Centre le titre */
+            padding: 1vw 2vh;
+            width: 100%;
+            height: 95vh;
+            padding: 5%;
+            box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
+            /*background-color:aqua;*/
+
+            margin-bottom: 10%;
+        }
+
+            /* Titre du carrousel */
+            .Acc_carousel-container h2 {
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 3vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 700;
+                line-height: 1.125;
+                margin-bottom: 5%;
+            }
+
+        /* Wrapper pour le carrousel */
+        .Acc_carousel-wrapper {
+            overflow: hidden; /* Cache les éléments qui dépassent de la zone visible */
+            width: 80vw; /* Ajuste la largeur selon la taille désirée */
+            margin: 0 auto;
+        }
+
+        /* Carrousel défilant */
+        .Acc_carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Animation du défilement */
+        }
+
+        /* Chaque élément du carrousel */
+        .Acc_carousel-item {
+            width: calc(100vw / 3); /* Chaque élément prend un tiers de la zone visible */
+            padding: 2vw;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+            /* Style pour l'image et les textes dans chaque rectangle */
+            .Acc_carousel-item img {
+                width: 100%;
+                aspect-ratio: 1/1; /* Maintient un format carré */
+                object-fit: cover;
+            }
+
+            .Acc_carousel-item p {
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 0.75vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 0.25;
+                text-align: center;
+            }
+
+            .Acc_carousel-item h3 {
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 1vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 600;
+                line-height: 0.5;
+                text-align: center;
+            }
+
+            .Acc_carousel-item div {
+                padding: 5% 0;
+                width: 100%;
+                aspect-ratio: 2/1;
+                background-color: var(--grey001);
+            }
+
+        /* Style des points d'indication */
+        .Acc_carousel-indicators {
+            margin-top: 1vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .Acc_dot {
+            height: 1vh;
+            aspect-ratio:1/1;
+            margin: 0.5vh;
+            border-radius: 50%;
+            display: inline-block;
+            border: .25vh solid var(--grey005); /* Points non actifs */
+        }
+
+            .Acc_dot.active {
+                background-color: var(--grey005); /* Point actif */
+            }
+
+
+        /*#endregion ====PARTENAIRES*/
+
+        /*#region ====MENTIONS LEGALES*/
+        #ML_Container {
+            clear: both;
+            width: 100%;
+            height: 4vh;
+            background-color: var(--grey003);
+            padding: 0.25%;
+            box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
+
+            display: flex;
+            justify-content: flex-end; /* Aligne l'élément à droite */
+            align-items: center;
+        }
+
+            #ML_Container a {
+                text-align: right;
+                list-style: none;
+                text-decoration: none; /* Supprime le soulignement des liens */
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 0.75vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                transition: font-weight 0.2s ease;
+            }
+
+                #ML_Container a:hover {
+                    font-weight: 600;
+                }
+        /*#endregion Mentions Legales*/
+
+
+        /*#endregion ================= Page Accueil*/
+
+
+        /*#region ================= Page Annonces*/
+        #Annonces-Page{
+            background-color:var(--grey001);
+        }
+        .section-navigation {
+            padding-top: 12vh;
+            text-align: center;
+            padding-bottom: 3vh;
+            background-color: var(--grey004);
+        }
+
+        .section-links a {
+            margin: 0 2vw;
+            
+
+            text-decoration: none; /* Supprime le soulignement des liens */
+            color: var(--grey001); /* Couleur des liens */
+            font-size: 1vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            
+            
+        }
+
+            .section-links a:hover {
+                text-decoration: underline;
+                text-underline-offset:1vh;
+            }
+
+        .section-navigation h2 {
+            /*width: 100%;*/
+            color: var(--grey001); /* Couleur des liens */
+            font-size: 3vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 700;
+            line-height: 1.125;
+        }
+
+        #section1 {
+            /*background-color: aqua;*/
+            padding-top: 10vh;
+            margin: 0;
+        }
+        #section3 {
+            /*background-color: aqua;*/
+            padding-top: 10vh;
+            margin: 0;
+        }
+        #section2 {
+            background-color: var(--grey002);
+            padding-top: 10vh;
+            padding-bottom: 5vh;
+        }
+            /* Carousel Section */
+            .Ann_carousel-section {
+                margin: 5vh 0;
+                text-align: center;
+            }
+
+                .Ann_carousel-section h2 {
+                    text-decoration: none; /* Supprime le soulignement des liens */
+                    color: var(--grey005); /* Couleur des liens */
+                    font-size: 1.5vw;
+                    font-family: "Heebo", sans-serif;
+                    font-weight: 600;
+                }
+
+        .Ann_carousel {
+            position: relative;
+            overflow: hidden;
+            width: 90%;
+            margin: 5vh auto;
+            /*margin: 0 5vh;*/
+        }
+
+        .Ann_carousel-items {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .Ann_carousel-item {
+            width: 30vw;
+            text-align: center;
+            cursor: pointer;
+            margin: 1vw;
+            /*AJOUT*/
+            flex: 0 0 20%;  
+            /*Chaque item occupe 20% de la largeur pour afficher 5 éléments*/ 
+            box-sizing: border-box;
+        }
+
+            .Ann_carousel-item img {
+                width: 100%;
+                height: auto;
+                border-radius:0 0 0 8vh;
+                box-shadow:var(--Shadow);
+            }
+
+            .Ann_carousel-item h3 {
+                text-decoration: none; /* Supprime le soulignement des liens */
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 0.75vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 800;
+                line-height: 0.25vw;
+            }
+
+            .Ann_carousel-item p {
+                text-decoration: none; /* Supprime le soulignement des liens */
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 0.75vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 0.25vw;
+            }
+
+        .Ann_carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 2vh;
+        }
+
+        .Ann_dot {
+            width: 2vh;
+            height: 2vh;
+            margin: 0 1vh;
+            border-radius: 50%;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+
+            .Ann_dot.active {
+                background-color: #333;
+            }
+
+        /* Overlay */
+        .Ann_overlay {
+            display: none;
+            /*display: block;*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Ann_overlay-content {
+            background-color: var(--grey001);
+            width: 70vw;
+            max-width: 70vw;
+            height:70vh;
+            display: flex;
+            padding: 4vh;
+            position: relative;
+            border-radius:0 16vh 0 0;
+            box-shadow:var(--Shadow);
+        }
+
+        #Ann_overlay-image {
+            border-radius: 0 12vh 0 0;
+            box-shadow:var(--Shadow);
+        }
+
+        .Ann_overlay-text {
+            padding: 5vw;
+        }
+
+            .Ann_overlay-text h3 {
+                text-decoration: none; /* Supprime le soulignement des liens */
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 1.5vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 600;
+                line-height: 1.5vw;
+            }
+
+            .Ann_overlay-text p {
+                text-decoration: none; /* Supprime le soulignement des liens */
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 1vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 1.25vw;
+            }
+
+        .Ann_overlay-close {
+            position: absolute;
+            top: 2vh;
+            left: 2vw;
+            background: none;
+            border: none;
+            font-size: 6vh;
+            cursor: pointer;
+        }
+
+        .Ann_overlay-button {
+            display: inline-block;
+            margin-top: 2vh;
+            padding: 2vh 2vw;
+            background-color: var(--grey005);
+            border-radius: 0 0 0 2vh;
+
+            text-decoration: none; /* Supprime le soulignement des liens */
+            color: var(--grey001); /* Couleur des liens */
+            font-size: 1vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 0.25vw;
+        }
+
+            
+        /*#endregion ================= Page Annonces*/
+
+        /*#region ================ Page contact*/
+
+        /* Styles généraux */
+        .contact_BodyLike {
+            /*font-family: Arial, sans-serif;*/
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:var(--grey001);
+        }
+
+        .contact-page {
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+            height: 90vh;
+            /*border: 1px solid #ddd;*/
+            margin-top:5%;
+
+        }
+
+        /* Partie gauche - Image */
+        .contact-image img {
+            width: 40vw;
+            height: auto;
+            object-fit: cover;
+            margin: 4vh;
+            box-shadow: var(--Shadow);
+            border-radius: 0 16vh 0 0;
+            /*filter: brightness(0.5);*/
+        }
+
+        /* Partie droite - Formulaire */
+        .contact-form {
+            display: flex;
+            flex-grow: 1.5;
+            padding: 2vh;
+
+
+        }
+
+        /* Colonnes du formulaire */
+        .form-column-left {
+            width: 70%;
+            padding: 1vh;
+
+        }
+
+        .form-column-right {
+            width: 30%;
+            padding: 1vh;
+
+        }
+
+        /* Titre du formulaire */
+        .form-title {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 3vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 700;
+            line-height: 1.125;
+            margin-bottom: 2vh;
+        }
+
+        /* Section info */
+        .info-blocks {
+            display: flex;
+            flex-direction: row;
+            gap: 2vh;
+            margin-bottom: 2vh;
+        }
+
+        .info-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-title {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 0.75vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 200;
+            line-height: 0.025vw;
+        }
+
+        .info-content {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 0.75vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 0.025vw;
+        }
+
+        .input-title {
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1.75vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 700;
+            line-height: 1.125;
+            /*margin-bottom: 2vh;*/
+        }
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            background-color:var(--grey001);
+        }
+
+            .input-section p {
+                color: var(--grey005); /* Couleur des liens */
+                font-size: 0.75vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 0.025vw;
+            }
+            /* Champs de texte */
+        .input-line {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #333;
+            margin: 10px 0;
+            padding: 5px 0;
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 1vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 500;
+            line-height: 1vw;
+            background-color: var(--grey001);
+        }
+            .input-line::placeholder {
+                color: var(--grey003); /* Couleur des liens */
+                font-size: 1vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 500;
+                line-height: 1vw;
+            }
+
+            .input-line:focus {
+                outline: none;
+            }
+            /* Zone de texte pour le message */
+        .message-box {
+            height: 16vh;
+            /*background-color: var(--grey001);*/
+        }
+
+        /* Infos de contact */
+        .contact-detail {
+            margin: 10px 0;
+            color: var(--grey005); /* Couleur des liens */
+            font-size: 0.75vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 0.75vw;
+        }
+
+        /* Bouton Envoyer */
+        .submit-button {
+            background-color: var(--grey005);
+            color: var(--grey001);
+            border: none;
+            padding: 1.5vh 4vh;
+            font-size: 1.125vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1.125vw;
+            cursor: pointer;
+            margin-top: 2vh;
+            align-self: flex-start;
+            border-radius: 3vh 0 0 0;
+            box-shadow: var(--Shadow);
+            transition: box-shadow 0.2s ease;
+        }
+            .submit-button:hover {
+                box-shadow: var(--Shadow-hover);
+            }
+            /* Overlay */
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+
+        .overlay-content {
+            background: var(--grey001);
+            padding: 6vh 3vw;
+            text-align: center;
+            border-radius: 0 0 0 12vh;
+            box-shadow:var(--Shadow);
+        }
+            .overlay-content p {
+                font-size: 1vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 1vw;
+            }
+
+            .overlay-content h2 {
+                font-size: 2vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 600;
+                line-height: 2vw;
+            }
+
+            .overlay-content button {
+                background-color: var(--grey005);
+                color: var(--grey001);
+                border: none;
+                padding: 1.5vh 4vh;
+                font-size: 1.125vw;
+                font-family: "Heebo", sans-serif;
+                font-weight: 400;
+                line-height: 1.125vw;
+                cursor: pointer;
+                margin-top: 2vh;
+                align-self: flex-start;
+                border-radius: 3vh;
+                box-shadow: var(--Shadow);
+                transition: box-shadow 0.2s ease;
+            }
+                .overlay-content button:hover {
+                    box-shadow: var(--Shadow-hover);
+                }
+        /*#endregion ================ Page contact*/
+
+        /*#region Mentions Légales*/
+        .ML_BodyLike{
+            /*background-color:aqua;*/
+            display:block;
+            margin-top: 4vh;
+            margin-bottom: 8vh;
+            margin-left:3vw;
+            margin-right:24vw;
+            height:100%;
+            max-height:100%;
+            text-align:left;
+        }
+
+        .ML_Close {
+            background-color: var(--grey005);
+            padding: 0 2vh;
+            border-radius: 0 2vh 0 0;
+            box-shadow: var(--Shadow);
+            color: var(--grey001);
+            font-size: 4vh;
+            text-decoration: none;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            transition: box-shadow 0.2s ease;
+        }
+            .ML_Close:hover {
+                box-shadow: var(--Shadow-hover);
+            }
+
+        .ML_BodyLike h1 {
+            color:var(--grey004);
+            font-size: 2vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 800;
+            line-height: 2vw;
+            margin-top:10vh;
+        }
+
+        .ML_BodyLike h3 {
+            color: var(--grey003);
+            font-size: 1.25vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 400;
+            line-height: 1vw;
+            margin-top: 5vh;
+            margin-bottom:0.5vh;
+        }
+
+        .ML_BodyLike p {
+            color: var(--grey005);
+            font-size: 0.9vw;
+            font-family: "Heebo", sans-serif;
+            font-weight: 500;
+            line-height: 1vw;
+            margin-top: 1vh;
+        }
+        /*#endregion Mentions Légales*/
+    }
+    /*#endregion ========PC*/
+
+
+
