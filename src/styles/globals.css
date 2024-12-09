@@ -85,7 +85,7 @@
           flex-direction: column;
           justify-content: space-around;
           height: 80%;
-          width: 9%;
+          width: 8%;
           background-color:var(--grey002);
           z-index:1000;
       }
@@ -999,12 +999,11 @@
       .ML_BodyLike {
           /*background-color:aqua;*/
           display: block;
-          margin-top: 4vh;
+          margin-top: 5vh;
           margin-bottom: 8vh;
           margin-left: 6vw;
           margin-right: 18vw;
-          height: 100%;
-          max-height: 100%;
+          height: auto;
           text-align: left;
       }
   
@@ -1923,12 +1922,11 @@
           .ML_BodyLike{
               /*background-color:aqua;*/
               display:block;
-              margin-top: 4vh;
+              margin-top: 15vh;
               margin-bottom: 8vh;
               margin-left:3vw;
               margin-right:24vw;
-              height:100%;
-              max-height:100%;
+              height:auto;
               text-align:left;
           }
   
