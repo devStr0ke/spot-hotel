@@ -21,20 +21,27 @@
   /*#region GLOBAL*/
       /*Smooth le scroll lors du click sur un lien de scroll ( à propos et partenaires )*/
       html {
-          scroll-behavior: smooth;
-          margin: 0%;
-          padding: 0%;
-          width: 100%;
-          max-width: 100%;
+        scroll-behavior: smooth;
+        margin: 0%;
+        padding: 0%;
+        width: 100%;
+        max-width: 100%;
+        height: 100%; /* Add this */
       }
-  
+    
       body {
-          height: 160%;
-          width: 100%;
-          max-width: 100%;
-          background-color: var(--grey001);
-          margin: 0%;
-          padding: 0%;
+        min-height: 100vh; /* Change from height: 160% to min-height: 100vh */
+        width: 100%;
+        max-width: 100%;
+        background-color: var(--grey001);
+        margin: 0%;
+        padding: 0%;
+        display: flex;  /* Add this */
+        flex-direction: column; /* Add this */
+      }
+    
+      main {
+        flex: 1; /* Add this */
       }
       /*#endregion GLOBAL*/
   
@@ -729,20 +736,24 @@
       /*#region Page contact*/
       /* Structure générale de la page en version mobile */
       .contact_BodyLike {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          padding: 1.5vh 3vw;
-          
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 60px); /* Adjust 60px to your navbar height */
+        padding: 1.5vh 3vw;
       }
   
       .contact-page {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          /*background-color: var(--grey001);*/
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
       }
   
       /* Cache la partie de l'image pour la version mobile */
@@ -762,20 +773,20 @@
   
       .form-title {
           /*font-size: 24px;*/
-          margin-bottom: 1vh;
           color: var(--grey005); /* Couleur des liens */
           font-size: 2.5vh;
           font-family: "Heebo", sans-serif;
           font-weight: 700;
-          line-height: 5vh;
+          line-height: 10vh;
       }
   
       .info-blocks {
           display: flex;
-          flex-direction: row;
-          justify-content: space-around;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           gap: 1vh;
-          width: 80%;
+          width: 95%;
           margin: 1vh;
           padding: 3vh;
           border-radius: 0 4vh 0 0;
@@ -793,7 +804,8 @@
           font-family: "Heebo", sans-serif;
           font-weight: 600;
           line-height: 1.5vh;
-          margin-bottom: 0.125vh;
+          margin-bottom: 0.5vh;
+          text-align: center;
       }
   
       .info-content {
@@ -802,6 +814,7 @@
           font-family: "Heebo", sans-serif;
           font-weight: 400;
           line-height: 1.5vh;
+          text-align: center;
       }
   
       /* Deuxième section : Formulaire de contact */
@@ -828,7 +841,7 @@
               font-size: 2.5vh;
               font-family: "Heebo", sans-serif;
               font-weight: 700;
-              line-height: 5vh;
+              line-height: 8vh;
               text-align: center;
               margin-bottom: 20px;
           }
@@ -843,7 +856,7 @@
           font-size: 1.5vh;
           font-family: "Heebo", sans-serif;
           font-weight: 400;
-          line-height: 2vh;
+          line-height: 4vh;
           text-align: left;
           background-color: var(--grey001);
       }
@@ -851,7 +864,7 @@
               color: var(--grey003); /* Couleur des liens */
               font-family: "Heebo", sans-serif;
               font-weight: 400;
-              line-height: 1vh;
+              line-height: 4vh;
               text-align: left;
           }
           .input-line:focus {
@@ -859,7 +872,7 @@
           }
   
       .message-box {
-          height: 10vh;
+          height: 15vh;
       }
   
       /* Dernière section : Détails des réseaux sociaux */
@@ -898,14 +911,13 @@
   
       /* Bouton d'envoi */
       .submit-button {
-          /*display: none;*/
           background-color: var(--grey005);
           border: none;
           padding: 2vh 4vw;
           margin-top: 2vh;
           margin-bottom: 2vh;
           cursor: pointer;
-          width: 40%;
+          width: 100%;
           text-align: center;
           border-radius: 2vh 0 0 0;
           box-shadow: var(--shadow-Mobile);
@@ -1685,13 +1697,13 @@
               justify-content: center;
               align-items: center;
               background-color:var(--grey001);
+              min-height: calc(100vh);
           }
   
           .contact-page {
               display: flex;
               width: 100%;
               max-width: 100%;
-              height: 90vh;
               /*border: 1px solid #ddd;*/
               margin-top:5%;
   
@@ -1736,8 +1748,8 @@
               font-size: 3vw;
               font-family: "Heebo", sans-serif;
               font-weight: 700;
-              line-height: 1.125;
-              margin-bottom: 2vh;
+              line-height: 2.5;
+              margin-bottom: 0vh;
           }
   
           /* Section info */
@@ -1745,7 +1757,7 @@
               display: flex;
               flex-direction: row;
               gap: 2vh;
-              margin-bottom: 2vh;
+              margin-bottom: 5vh;
           }
   
           .info-block {
@@ -1758,7 +1770,7 @@
               font-size: 0.75vw;
               font-family: "Heebo", sans-serif;
               font-weight: 200;
-              line-height: 0.025vw;
+              line-height: 3vw;
           }
   
           .info-content {
@@ -1766,7 +1778,7 @@
               font-size: 0.75vw;
               font-family: "Heebo", sans-serif;
               font-weight: 400;
-              line-height: 0.025vw;
+              line-height: 0.25vw;
           }
   
           .input-title {
@@ -1775,7 +1787,7 @@
               font-family: "Heebo", sans-serif;
               font-weight: 700;
               line-height: 1.125;
-              /*margin-bottom: 2vh;*/
+              margin-bottom: 4vh;
           }
           .input-section {
               display: flex;
@@ -1788,7 +1800,7 @@
                   font-size: 0.75vw;
                   font-family: "Heebo", sans-serif;
                   font-weight: 400;
-                  line-height: 0.025vw;
+                  line-height: 2vw;
               }
               /* Champs de texte */
           .input-line {
@@ -1843,7 +1855,7 @@
               line-height: 1.125vw;
               cursor: pointer;
               margin-top: 2vh;
-              align-self: flex-start;
+              align-self: flex-end;
               border-radius: 3vh 0 0 0;
               box-shadow: var(--shadow);
               transition: box-shadow 0.2s ease;

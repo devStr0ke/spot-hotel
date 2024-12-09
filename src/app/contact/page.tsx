@@ -9,8 +9,8 @@ export default function Contact() {
           <Image
             src="/Img/CONTACT_contact.png"
             alt="Contact"
-            width={600}
-            height={400}
+            width={2000}
+            height={2000}
             priority
           />
         </div>
