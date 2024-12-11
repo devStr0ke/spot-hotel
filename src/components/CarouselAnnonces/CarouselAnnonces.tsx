@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import styles from './CarouselAnnonces.module.css'
 
 interface CarouselProps {
   type: 'hotel' | 'restaurant' | 'terrain'
@@ -28,11 +29,11 @@ export default function CarouselAnnonces({ type, items }: CarouselProps) {
   }
 
   return (
-    <section id={`section-${type}`} className="Ann_carousel-section">
+    <section id={`section-${type}`} className={styles.carouselSection}>
       <h2>{type.charAt(0).toUpperCase() + type.slice(1)}s</h2>
-      <div className="Ann_carousel">
+      <div className={styles.carousel}>
         <div 
-          className="Ann_carousel-items"
+          className={styles.carouselItems}
           style={{
             transform: `translateX(-${currentSlide * 30}vw)`
           }}
@@ -40,7 +41,7 @@ export default function CarouselAnnonces({ type, items }: CarouselProps) {
           {items.map((item) => (
             <div 
               key={item.id}
-              className="Ann_carousel-item"
+              className={styles.carouselItem}
               onClick={() => openOverlay(item)}
             >
               <Image
@@ -55,43 +56,41 @@ export default function CarouselAnnonces({ type, items }: CarouselProps) {
           ))}
         </div>
         
-        <div className="Ann_carousel-dots">
+        <div className={styles.dots}>
           {[...Array(4)].map((_, i) => (
             <span
               key={i}
-              className={`Ann_dot ${currentSlide === i ? 'active' : ''}`}
+              className={`${styles.dot} ${currentSlide === i ? styles.active : ''}`}
               onClick={() => scrollCarousel(i)}
             />
           ))}
         </div>
       </div>
 
-      {showOverlay && (
-        <div className="Ann_overlay">
-          <div className="Ann_overlay-content">
-            <button 
-              className="Ann_overlay-close"
-              onClick={() => setShowOverlay(false)}
-            >
-              ×
-            </button>
-            <div className="Ann_overlay-text">
-              <h3>{selectedItem.title}</h3>
-              <p>{selectedItem.description}</p>
-              <Link href="/contact" className="Ann_overlay-button">
-                Contactez-nous
-              </Link>
-            </div>
-            <Image
-              id="Ann_overlay-image"
-              src={selectedItem.image}
-              alt={selectedItem.title}
-              width={500}
-              height={300}
-            />
+      <div className={`${styles.overlay} ${showOverlay ? styles.active : ''}`}>
+        <div className={styles.overlayContent}>
+          <button 
+            className={styles.overlayClose}
+            onClick={() => setShowOverlay(false)}
+          >
+            ×
+          </button>
+          <div className={styles.overlayText}>
+            <h3>{selectedItem.title}</h3>
+            <p>{selectedItem.description}</p>
+            <Link href="/contact" className={styles.overlayButton}>
+              Contactez-nous
+            </Link>
           </div>
+          <Image
+            className={styles.overlayImage}
+            src={selectedItem.image}
+            alt={selectedItem.title}
+            width={500}
+            height={300}
+          />
         </div>
-      )}
+      </div>
     </section>
   )
 }

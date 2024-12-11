@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styles from './mentions-legales.module.css'
 
 export const metadata = {
   title: 'Mentions légales',
@@ -7,8 +8,8 @@ export const metadata = {
 
 export default function MentionsLegales() {
   return (
-    <div className="ML_BodyLike">
-      <Link href="/" className="ML_Close">x</Link>
+    <div className={styles.bodyLike}>
+      <Link href="/" className={styles.close}>x</Link>
       <h1>Mentions Légales</h1>
 
       <h3>Éditeur du site :</h3>

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Heebo } from 'next/font/google'
 import '@/styles/globals.css'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from '../components/Navbar/Navbar'
+import Footer from '../components/Footer/Footer'
 
 const heebo = Heebo({ subsets: ['latin'] })
 

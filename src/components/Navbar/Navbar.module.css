@@ -1,0 +1,142 @@
+/* Mobile styles */
+@media (orientation: portrait) {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2.4%;
+      background-color: var(--grey002);
+      box-shadow: var(--shadow-Mobile);
+      color: var(--grey001);
+    }
+  
+    .logo {
+      width: 8%;
+      aspect-ratio: 1/1;
+      background-color: var(--grey005);
+      margin: 2%;
+      box-shadow: var(--shadow-Mobile);
+    }
+  
+    .toggle {
+      border-style: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 80%;
+      width: 8%;
+      background-color: var(--grey002);
+      z-index: 1000;
+    }
+  
+    .line {
+      background-color: var(--grey005);
+      height: 1.2vw;
+      width: 100%;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      margin-top: 10%;
+      margin-bottom: 10%;
+    }
+  
+    .toggle.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(1.5vw, 0.90vw);
+    }
+  
+    .toggle.active .line:nth-child(2) {
+      transform: rotate(-45deg) translate(0.90vw, -0.90vw);
+    }
+  
+    .links {
+      flex-direction: column;
+      list-style: none;
+      position: absolute;
+      top: 5%;
+      right: 0;
+      width: 40%;
+      background-color: var(--grey002);
+      padding: 0;
+      margin: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+  
+    .links.active {
+      display: flex;
+      max-height: 100%;
+    }
+  
+    .links li {
+      text-align: right;
+    }
+  
+    .links a {
+      display: block;
+      padding: 1.78% 7.69%;
+      text-decoration: none;
+      color: var(--grey005);
+      font-size: 1.75vh;
+      font-family: "Heebo", sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      transition: font-weight 0.2s ease;
+    }
+  
+    .links a:hover {
+      font-weight: 600;
+    }
+  }
+  
+  /* Desktop styles */
+  @media (orientation: landscape) {
+    .toggle {
+      display: none;
+    }
+  
+    .navbar {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4vw;
+      background-color: var(--grey002);
+      box-shadow: var(--shadow);
+      align-items: center;
+      z-index: 1000;
+      transition: top 0.5s ease-in-out;
+    }
+  
+    .logo {
+      height: 80%;
+      aspect-ratio: 1/1;
+      background-color: var(--grey005);
+      margin: 10%;
+    }
+  
+    .links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .links li {
+      margin: 0 1.5vw;
+    }
+  
+    .links a {
+      text-decoration: none;
+      color: var(--grey005);
+      font-size: 1vw;
+      font-family: "Heebo", sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      transition: font-weight 0.2s ease;
+    }
+  
+    .links a:hover {
+      font-weight: 600;
+    }
+  }

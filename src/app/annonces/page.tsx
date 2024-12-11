@@ -1,4 +1,5 @@
-import CarouselAnnonces from '@/components/CarouselAnnonces'
+import CarouselAnnonces from '@/components/CarouselAnnonces/CarouselAnnonces'
+import styles from './annonces.module.css'
 
 const hotels = [
   {
@@ -104,10 +105,10 @@ const terrains = [
 
 export default function Annonces() {
   return (
-    <main>
-      <div className="section-navigation">
+    <main className={styles.page}>
+      <div className={styles.navigation}>
         <h2>Annonces</h2>
-        <div className="section-links">
+        <div className={styles.links}>
           <a href="#section-hotel">Hôtels</a>
           <a href="#section-restaurant">Restaurants</a>
           <a href="#section-terrain">Terrains</a>

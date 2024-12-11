@@ -1,11 +1,12 @@
 import Image from 'next/image'
-import ContactForm from '@/components/ContactForm'
+import ContactForm from '@/components/ContactForm/ContactForm'
+import styles from './contact.module.css'
 
 export default function Contact() {
   return (
-    <div className="contact_BodyLike">
-      <div className="contact-page">
-        <div className="contact-image">
+    <div className={styles.bodyLike}>
+      <div className={styles.page}>
+        <div className={styles.image}>
           <Image
             src="/Img/CONTACT_contact.png"
             alt="Contact"
@@ -14,7 +15,9 @@ export default function Contact() {
             priority
           />
         </div>
-        <ContactForm />
+        <div className={styles.form}>
+          <ContactForm />
+        </div>
       </div>
     </div>
   )

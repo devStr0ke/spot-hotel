@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import CarouselPartenaires from '../components/CarouselPartenaires'
+import CarouselPartenaires from '@/components/CarouselPartenaires/CarouselPartenaires'
 
 export default function Home() {
   return (

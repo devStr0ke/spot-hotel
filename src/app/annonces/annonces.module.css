@@ -1,0 +1,70 @@
+/* Mobile styles */
+@media (orientation: portrait) {
+    .page {
+      background-color: var(--grey001);
+    }
+  
+    .navigation {
+      padding-top: 2vh;
+      text-align: center;
+      padding-bottom: 3vh;
+      background-color: var(--grey004);
+    }
+  
+    .links {
+      margin: 2vh 0;
+    }
+  
+    .links a {
+      text-decoration: underline;
+      text-underline-offset: 0.3vh;
+      color: var(--grey001);
+      font-size: 2vh;
+      font-family: "Heebo", sans-serif;
+      font-weight: 400;
+      margin: 0 2vh;
+    }
+  
+    .navigation h2 {
+      color: var(--grey001);
+      font-size: 2.5vh;
+      font-family: "Heebo", sans-serif;
+      font-weight: 700;
+      line-height: 5vh;
+    }
+  }
+  
+  /* Desktop styles */
+  @media (orientation: landscape) {
+    .page {
+      background-color: white;
+    }
+  
+    .navigation {
+      padding-top: 12vh;
+      text-align: center;
+      padding-bottom: 3vh;
+      background-color: var(--grey004);
+    }
+  
+    .links a {
+      margin: 0 2vw;
+      text-decoration: none;
+      color: var(--grey001);
+      font-size: 1vw;
+      font-family: "Heebo", sans-serif;
+      font-weight: 400;
+    }
+  
+    .links a:hover {
+      text-decoration: underline;
+    }
+  
+    .navigation h2 {
+      color: var(--grey001);
+      font-size: 3vw;
+      font-family: "Heebo", sans-serif;
+      font-weight: 700;
+      line-height: 8vw;
+    }
+  }
