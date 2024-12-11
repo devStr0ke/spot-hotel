@@ -37,8 +37,8 @@ export default function Home() {
           priority
         />
         <div className="text-content">
-          <h1>Un savoir-faire reconnu et une approche sur-mesure !</h1>
-          <p>
+          <h1 className='APROPOS_h1'>Un savoir-faire reconnu et une approche sur-mesure !</h1>
+          <p className='APROPOS_p'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus vestibulum purus, a maximus mauris tempus ac.
             In nec mauris ut quam molestie maximus. Praesent venenatis gravida urna, eget eleifend ante lobortis id. Proin elementum vitae sapien at finibus.
             Mauris nec ex arcu. Praesent et magna bibendum, rutrum nulla eu, ultrices nisl. Aenean tincidunt eu quam ut tristique.

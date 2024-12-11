@@ -14,6 +14,23 @@
   --shadow-Mobile-hover: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+/* Common animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile styles */
 /*#region ========MOBILE*/
 @media (orientation:portrait) {
 
@@ -106,7 +123,7 @@
           margin-top:5%;
           padding: 1.5% 3%;
           background-color: var(--grey005);
-          border-radius: 2vh;
+          border-radius: 1vh;
           text-decoration: none;
           font-family: "Heebo", sans-serif;
           font-weight: 400;
@@ -174,16 +191,6 @@
           border-radius: 8vh 0 0 0;
           box-shadow: var(--shadow-Mobile);
       }
-  
-      /* Colonne de droite : xp-square (les carrés) */
-      .xp-column {
-          display: flex;
-          flex-direction: column;
-          align-items: center; /* Centre les xp-square horizontalement */
-          justify-content: center;
-          width: 100%; /* Prend toute la largeur */
-      }
-  
       /* Chaque xp-square prend toute la largeur disponible et est centré */
       .xp-square {
           display: flex;
@@ -227,10 +234,8 @@
       /* Style général pour la div contenant le carrousel */
       .Acc_carousel-container {
           text-align: center; /* Centre le titre */
-          padding: 1vw 2vh;
           width: 100vw;
           height: 40vh;
-          padding: 2vh;
           box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
           /*background-color:aqua;*/
   
@@ -249,235 +254,223 @@
       /*#endregion ====PARTENAIRES*/
   /*#endregion =============== Page Accueil*/
   }
-  
-      /*#endregion ========MOBILE*/
-  
-  
-  
-  /*#region ========PC*/
-      @media (orientation:landscape) {
-  
-  
-          /*#region GLOBAL*/
-          /*Smooth le scroll lors du click sur un lien de scroll ( à propos et partenaires )*/
-          html {
-              scroll-behavior: smooth;
-              margin: 0%;
-              padding: 0%;
-              width: 100%;
-              max-width: 100%;
-          }
-  
-          body {
-              /*height: 280%;*/
-              width: 100%;
-              max-width: 100%;
-              /*background-color: var(--grey002);*/
-              margin: 0%;
-              padding: 0%;
-          }
-          /*#endregion GLOBAL*/
-  
-          /*#region ================= Page Accueil*/
-          #accueil-page {
-              background-color:var(--grey002);
-          }
-          /*#region ====OFFRE INT*/
-          #OFFRE_INT {
-              width: 100%;
-              height: 100vh;
-              background-color: var(--grey002);
-              /*background-color: aqua;*/
-  
-              padding: 5%;
-              display: flex;
-              align-items: center; /*cetrage vertical*/
-              justify-content: space-between; /*espace entre les element*/
-              gap: 1.5%; /*espace etre l'image et le texte*/
-              box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
-          }
-  
-              #OFFRE_INT .text-content {
-                  display: flex;
-                  flex-direction: column; /* Organise les éléments en colonne */
-                  justify-content: flex-start; /* Aligne les éléments en haut */
-                  width: 40%; /* La colonne de texte prend x% de la largeur */
-                  /*padding: 2.5%;*/
-                  /*background-color: aliceblue;*/
-              }
-  
-              #OFFRE_INT h1 {
-                  width: 100%;
-                  color: var(--grey005); /* Couleur des liens */
-                  font-size: 3vw;
-                  font-family: "Heebo", sans-serif;
-                  font-weight: 700;
-                  line-height: 1.125;
-              }
-  
-              #OFFRE_INT p {
-                  width: 100%;
-                  color: var(--grey005); /* Couleur des liens */
-                  font-size: 1.25vw;
-                  font-family: "Heebo", sans-serif;
-                  font-weight: 400;
-                  line-height: 1.5;
-              }
-  
-  
-          .OFFRE_INT_AnnoncesButton {
-              width: 50%;
-              display: inline-block;
-              white-space: nowrap;
-              padding: 1.5vh 3vw;
-              background-color: var(--grey005);
-              border-radius: 0 0 2vw 0;
-              margin-top: 8vh;
-              text-decoration: none;
-              font-family: "Heebo", sans-serif;
-              font-weight: 400;
-              font-size: 1.25vw;
-              color: var(--grey001);
-              box-shadow: var(--shadow);
-              transition: box-shadow 0.2s ease, font-weight 0.2s ease;
-          }
-  
-              .OFFRE_INT_AnnoncesButton:hover {
-                  box-shadow: var(--shadow-hover);
-              }
-  
-          #OFFRE_INT img {
-              width: 40%; /* L'image prend x% de la largeur */
-              height: auto;
-              display: block; /* Change l'image en un élément de type bloc pour qu'elle respecte les marges/padding */
-              object-fit: cover; /* Ajuste l'image pour bien remplir sa boîte tout en gardant son ratio */
-              border-radius: 0 0 0 8vw;
-              box-shadow: var(--shadow);
-          }
-          /*#endregion ====OFFRE INT*/
-  
-          /*#region ====A PROPOS*/
-          #APROPOS_Container {
-              width: 100%;
-              height: 100vh;
-              background-color: var(--grey001);
-              padding: 5%;
-              display: flex;
-              align-items: center; /*cetrage vertical*/
-              justify-content: space-between; /*espace entre les element*/
-              gap: 1.5%; /*espace etre l'image et le texte*/
-              box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
-          }
-  
-          .text-content {
-              display: flex;
-              flex-direction: column; /* Organise les éléments en colonne */
-              justify-content: flex-start; /* Aligne les éléments en haut */
-              width: 41%; /* La colonne de texte prend x% de la largeur */
-          }
-  
-              .text-content h1 {
-                  width: 100%;
-                  color: var(--grey005); /* Couleur des liens */
-                  font-size: 3vw;
-                  font-family: "Heebo", sans-serif;
-                  font-weight: 700;
-                  line-height: 1.125;
-                  margin-bottom: 8%;
-              }
-  
-              .text-content p {
-                  width: 100%;
-                  color: var(--grey005); /* Couleur des liens */
-                  font-size: 1.25vw;
-                  font-family: "Heebo", sans-serif;
-                  font-weight: 400;
-                  line-height: 1.5;
-              }
-  
-          .APROPOS_xp {
-              display: flex;
-              justify-content: space-around; /*espace entre les element*/
-              align-items: center;
-              gap: 5%; /*espace etre l'image et le texte*/
-              width: 70%;
-              background-color: var(--grey004);
-              box-shadow: var(--shadow);
-              margin-top: 3%;
-          }
-  
-          .xp-square {
-              width: 30%; /* Taille des carrés */
-              
-              /*background-color:aqua;*/
-              padding: 5%;
-              display: flex;
-              flex-direction: column; /* Empile les éléments p et h3 */
-              justify-content: center; /* Centre verticalement les éléments dans chaque carré */
-              align-items: center; /* Centre horizontalement les éléments */
-              text-align: center; /* Centre le texte */
-          }
-  
-              .xp-square p {
-                  width: 100%;
-                  margin: 0;
-                  color: var(--grey001); /* Couleur des liens */
-                  font-size: 0.75vw;
-                  font-family: "Heebo", sans-serif;
-                  font-weight: 400;
-                  line-height: 1;
-                  text-align: center;
-              }
-  
-              .xp-square h3 {
-                  width: 100%;
-                  margin: 0;
-                  color: var(--grey001); /* Couleur des liens */
-                  font-size: 2.5vw;
-                  font-family: "Heebo", sans-serif;
-                  font-weight: 700;
-                  line-height: 1;
-              }
-  
-          #APROPOS_Container img {
-              width: 40%; /* L'image prend x% de la largeur */
-              height: auto;
-              display: block; /* Change l'image en un élément de type bloc pour qu'elle respecte les marges/padding */
-              object-fit: cover; /* Ajuste l'image pour bien remplir sa boîte tout en gardant son ratio */
-              border-radius: 0 0 0 8vw;
-              box-shadow: var(--shadow);
-          }
-          /*#endregion ====A PROPOS*/
-  
-          /*#region ====PARTENAIRES*/
-  
-          /* Style général pour la div contenant le carrousel */
-          .Acc_carousel-container {
-              text-align: center; /* Centre le titre */
-              padding: 1vw 2vh;
-              width: 100%;
-              height: 95vh;
-              padding: 5%;
-              box-sizing: border-box; /* Le padding est inclus dans le calcul de la taille */
-              /*background-color:aqua;*/
-  
-              margin-bottom: 10%;
-          }
-  
-              /* Titre du carrousel */
-              .Acc_carousel-container h2 {
-                  color: var(--grey005); /* Couleur des liens */
-                  font-size: 3vw;
-                  font-family: "Heebo", sans-serif;
-                  font-weight: 700;
-                  line-height: 1.125;
-                  margin-bottom: 5%;
-              }
-          /*#endregion ====PARTENAIRES*/
-          /*#endregion ================= Page Accueil*/
-      }
-      /*#endregion ========PC*/
-  
-  
-  
-  
+
+/* Desktop styles */
+@media (orientation: landscape) {
+
+  html {
+    scroll-behavior: smooth;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    max-width: 100%;
+    height: 100%; /* Add this */
+  }
+
+  body {
+   width: 100%;
+   max-width: 100%;
+   margin: 0%;
+   padding: 0%;
+  }
+
+  .accueil-page {
+    background: linear-gradient(135deg, var(--grey001) 0%, var(--grey002) 100%);
+  }
+
+  #OFFRE_INT {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15vh 8vw 5vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .text-content {
+    width: 45%;
+    animation: slideIn 1s ease-out;
+  }
+
+  #OFFRE_INT h1 {
+    color: var(--grey005);
+    font-size: 3vw;
+    font-family: "Heebo", sans-serif;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 3vh;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  #OFFRE_INT p {
+    color: var(--grey005);
+    font-size: 1.2vw;
+    font-family: "Heebo", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 4vh;
+    opacity: 0.9;
+  }
+
+  #OFFRE_INT img {
+    width: 45%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 0 0 15vh;
+    box-shadow: var(--shadow);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.5s ease;
+    animation: scaleIn 1s ease-out;
+  }
+
+  #OFFRE_INT img:hover {
+    transform: perspective(1000px) rotateY(0deg) translateZ(50px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .OFFRE_INT_AnnoncesButton {
+    background: linear-gradient(135deg, var(--grey005) 0%, #2c3c33 100%);
+    padding: 1.5vh 3vw;
+    border-radius: 2vh;
+    text-decoration: none;
+    font-family: "Heebo", sans-serif;
+    font-weight: 500;
+    font-size: 1.2vw;
+    color: var(--grey001);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 2vh;
+  }
+
+  .OFFRE_INT_AnnoncesButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .OFFRE_INT_AnnoncesButton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+  }
+
+  .OFFRE_INT_AnnoncesButton:hover::after {
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+  }
+
+  #APROPOS_Container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 10vh 8vw;
+    background: var(--grey001);
+    position: relative;
+    gap: 5vw;
+  }
+
+  #APROPOS_Container img {
+    width: 45%;
+    height: auto;
+    border-radius: 0 15vh 0 0;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: perspective(1000px) rotateY(5deg);
+    transition: all 0.5s ease;
+    animation: scaleIn 1s ease-out;
+  }
+
+  #APROPOS_Container img:hover {
+    transform: perspective(1000px) rotateY(0deg) translateZ(50px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  }
+
+  #APROPOS_Container .text-content {
+    width: 45%;
+    animation: slideIn 1s ease-out;
+  }
+
+  #APROPOS_Container h1 {
+    color: var(--grey005);
+    font-size: 3vw;
+    font-family: "Heebo", sans-serif;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 3vh;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  #APROPOS_Container p {
+    color: var(--grey005);
+    font-size: 1.2vw;
+    font-family: "Heebo", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 4vh;
+    opacity: 0.9;
+  }
+
+  #APROPOS_Container .APROPOS_xp {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    margin-top: 4vh;
+    width: 100%;
+  }
+
+  #APROPOS_Container .APROPOS_xp .xp-square {
+    background: var(--grey005);
+    padding: 1.5vh 2vw;
+    border-radius: 2vh;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    min-height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    gap: 0.5vh; 
+  }
+
+  #APROPOS_Container .APROPOS_xp .xp-square:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  #APROPOS_Container .APROPOS_xp .xp-square p {
+    color: var(--grey001) !important;
+    font-size: 1vw;
+    margin: 0;               /* Remove any margins */
+    order: 1;                /* Make p appear first */
+    text-align: center;
+}
+
+#APROPOS_Container .APROPOS_xp .xp-square h3 {
+    color: var(--grey001) !important;
+    font-size: 2.5vw;
+    margin: 0;               
+    order: 2; 
+    text-align: center;
+}
+
+  #PARTENAIRES_Container {
+    padding: 10vh 0;
+    background: white;
+    text-align: center;
+  }
+
+  #PARTENAIRES_Container h2 {
+    color: var(--grey005);
+    font-size: 2.5vw;
+    font-weight: 700;
+    margin-bottom: 5vh;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+}
