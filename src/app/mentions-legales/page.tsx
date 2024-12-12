@@ -12,7 +12,7 @@ export default function MentionsLegales() {
       <Link href="/" className={styles.close}>x</Link>
       <h1>Mentions Légales</h1>
 
-      <h3>Éditeur du site :</h3>
+      <h3>Éditeur du siteeeeee :</h3>
       <p>
         Nom de l&apos;agence immobilière<br />
         Adresse de l&apos;agence (France)<br />
