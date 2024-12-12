@@ -36,12 +36,14 @@
       padding: 2vw;
       box-sizing: border-box;
       text-align: center;
+
     }
   
     .item img {
       width: 100%;
       aspect-ratio: 1/1;
       object-fit: cover;
+
     }
   
     .item p {
@@ -130,12 +132,15 @@
       padding: 2vw;
       box-sizing: border-box;
       text-align: center;
+      
+      
     }
   
     .item img {
       width: 100%;
       aspect-ratio: 1/1;
       object-fit: cover;
+      box-shadow: var(--shadow);
     }
   
     .item p {
