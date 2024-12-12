@@ -51,7 +51,7 @@
       margin: 1vh;
       padding: 3vh;
       border-radius: 0 4vh 0 0;
-      background-color: white;
+      background-color:var(--grey001);
       box-shadow: var(--shadow-Mobile);
     }
   
@@ -116,11 +116,11 @@
       font-weight: 400;
       line-height: 4vh;
       text-align: left;
-      background-color: white;
+      background-color:var(--grey001);
     }
       
     .input::placeholder {
-      color: var(--grey003);
+      color: var(--grey004);
       font-family: "Heebo", sans-serif;
       font-weight: 400;
       line-height: 4vh;
@@ -144,14 +144,14 @@
       font-weight: 400;
       line-height: 4vh;
       text-align: left;
-      background-color: white;
+      background-color: var(--grey001);
       /* Add specific styles for messageBox */
       height: 15vh;
       resize: none; /* Prevents textarea resizing */
     }
     
     .messageBox::placeholder {
-      color: var(--grey003);
+      color: var(--grey004);
       font-family: "Heebo", sans-serif;
       font-weight: 400;
       line-height: 4vh;
@@ -285,7 +285,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: white;
+      background-color: var(--grey001);
       min-height: calc(100vh);
     }
   
@@ -370,7 +370,7 @@
     .inputSection {
       display: flex;
       flex-direction: column;
-      background-color: white;
+      background-color: var(--grey001);
     }
   
     .inputSection p {
@@ -392,11 +392,11 @@
       font-family: "Heebo", sans-serif;
       font-weight: 500;
       line-height: 1vw;
-      background-color: white;
+      background-color: var(--grey001);
     }
   
     .input::placeholder {
-      color: var(--grey003);
+      color: var(--grey004);
       font-size: 1vw;
       font-family: "Heebo", sans-serif;
       font-weight: 500;
@@ -418,14 +418,14 @@
       font-family: "Heebo", sans-serif;
       font-weight: 500;
       line-height: 1vw;
-      background-color: white;
+      background-color: var(--grey001);
       /* Add specific styles for messageBox */
       height: 16vh;
       resize: none;
     }
   
     .messageBox::placeholder {
-      color: var(--grey003);
+      color: var(--grey004);
       font-size: 1vw;
       font-family: "Heebo", sans-serif;
       font-weight: 500;

@@ -9,6 +9,7 @@
       text-align: center;
       padding-bottom: 3vh;
       background-color: var(--grey004);
+      box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.12);
     }
   
     .links {
@@ -37,7 +38,7 @@
   /* Desktop styles */
   @media (orientation: landscape) {
     .page {
-      background-color: white;
+      background-color: var(--grey001);
     }
   
     .navigation {
@@ -45,6 +46,7 @@
       text-align: center;
       padding-bottom: 3vh;
       background-color: var(--grey004);
+      box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.12);
     }
   
     .links a {
