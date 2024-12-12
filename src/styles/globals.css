@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --grey001: #edeae5;
-  --grey002: #edeae5;
+  --grey001: #fdf0d5;
+  --grey002: #fdf0d5;
   --grey003: #99a58f;
-  --grey004: #99a58f;
-  --grey005: #3e4f47;
+  --grey004: #669bbc;
+  --grey005: #003049;
   --shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.25);
   --shadow-hover: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
   --shadow-Mobile: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
