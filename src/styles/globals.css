@@ -464,7 +464,7 @@
 
 #APROPOS_Container {
     color: var(--grey001) !important;
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin: 0;               
     order: 2; 
     text-align: center;
