@@ -209,11 +209,12 @@
       font-family: "Heebo", sans-serif;
       font-weight: 400;
       line-height: 1.5vh;
-      transition: box-shadow 0.2s ease;
+      transition: all 0.3s ease;
     }
   
-    .submitButton:hover {
+    .submitButton:active {
       box-shadow: var(--shadow-Mobile-hover);
+      transform: translateY(var(--TranslateDown-Mobile));
     }
   
     .overlay {
@@ -242,17 +243,17 @@
     }
   
     .overlayContent h2 {
-      font-size: 2vw;
+      font-size: 3vh;
       font-family: "Heebo", sans-serif;
       font-weight: 600;
-      line-height: 2vw;
+      line-height: 4vh;
     }
   
     .overlayContent p {
-      font-size: 1vw;
+      font-size: 1.5vh;
       font-family: "Heebo", sans-serif;
       font-weight: 400;
-      line-height: 1vw;
+      line-height: 1.5vh;
     }
   
     .overlayButton {
@@ -260,20 +261,21 @@
       color: var(--grey001);
       border: none;
       padding: 1.5vh 4vh;
-      font-size: 1.125vw;
+      font-size: 2vh;
       font-family: "Heebo", sans-serif;
       font-weight: 400;
-      line-height: 1.125vw;
+      line-height: 2vh;
       cursor: pointer;
       margin-top: 2vh;
       align-self: flex-start;
       border-radius: 3vh;
       box-shadow: var(--shadow);
-      transition: box-shadow 0.2s ease;
+      transition: all 0.3s ease;
     }
   
-    .overlayButton:hover {
-      box-shadow: var(--shadow-hover);
+    .overlayButton:active {
+      box-shadow: var(--shadow-Mobile-hover);
+      transform: translateY(--TranslateDown-Mobile);
     }
   }
   
@@ -460,11 +462,12 @@
       align-self: flex-end;
       border-radius: 3vh 0 0 0;
       box-shadow: var(--shadow);
-      transition: box-shadow 0.2s ease;
+      transition: all 0.3s ease;
     }
   
     .submitButton:hover {
       box-shadow: var(--shadow-hover);
+      transform: translateY(--TranslateDown);
     }
   
     .overlay {
@@ -520,10 +523,11 @@
       align-self: flex-start;
       border-radius: 3vh;
       box-shadow: var(--shadow);
-      transition: box-shadow 0.2s ease;
+      transition: all 0.3s ease;
     }
   
     .overlayContent button:hover {
       box-shadow: var(--shadow-hover);
+      transform: translateY(--TranslateDown);
     }
   }

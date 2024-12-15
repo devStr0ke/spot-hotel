@@ -54,7 +54,7 @@
   @media (orientation: landscape) {
     .bodyLike {
       padding: 15vh 15vw 5vh 15vw;
-      background-color: white;
+      background-color: var(--grey001);
       min-height: 100vh;
       position: relative;
     }

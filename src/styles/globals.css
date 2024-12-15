@@ -9,9 +9,13 @@
   --grey004: #669bbc;
   --grey005: #003049;
   --shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.33);
-  --shadow-hover: 0px 4px 4px 0px rgba(0, 0, 0, 0.33);
+  --shadow-hover: 0px 3px 3px 0px rgba(0, 0, 0, 0.33);
   --shadow-Mobile: 0px 2px 2px 0px rgba(0, 0, 0, 0.33);
   --shadow-Mobile-hover: 0px 4px 4px 0px rgba(0, 0, 0, 0.33);
+  --TranslateUp:-4px;
+  --TranslateDown:4px;
+  --TranslateUp-Mobile:-2px;
+  --TranslateDown-Mobile:2px;
 }
 
 /* Common animations */
@@ -130,11 +134,12 @@
           font-size: 1.75vh;
           color: var(--grey001);
           box-shadow: var(--shadow-Mobile);
-          transition: box-shadow 0.2s ease, font-weight 0.2s ease;
+          transition: all 0.3s ease;
          
       }
   
-          .OFFRE_INT_AnnoncesButton:hover {
+          .OFFRE_INT_AnnoncesButton:active {
+            transform: translateY(var(--TranslateDown-Mobile));
               box-shadow: var(--shadow-Mobile-hover);
           }
   /*#endregion ====OFFRE INT*/   
@@ -349,7 +354,7 @@
   }
 
   .OFFRE_INT_AnnoncesButton:hover {
-    transform: translateY(1px);
+    transform: translateY(var(--TranslateDown));
     box-shadow: var(--shadow-hover);
   }
 
@@ -445,7 +450,7 @@
   }
 
   #APROPOS_Container .APROPOS_xp .xp-square:hover {
-    transform: translateY(-5px);
+    transform: translateY(var(--TranslateUp));
     box-shadow: var(--shadow-hover);
   }
 

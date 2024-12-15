@@ -180,9 +180,15 @@
       border-radius: 50%;
       display: inline-block;
       border: 0.25vh solid var(--grey005);
+
+      transition: all 0.3 ease;
     }
   
     .dot.active {
       background-color: var(--grey005);
+    }
+
+    .dot:hover{
+      border: 0.33vh solid var(--grey005);
     }
   }
