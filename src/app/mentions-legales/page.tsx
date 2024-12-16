@@ -14,17 +14,20 @@ export default function MentionsLegales() {
 
       <h3>Éditeur du site :</h3>
       <p>
-        Nom de l&apos;agence immobilière<br />
-        Adresse de l&apos;agence (France)<br />
-        Numéro de téléphone : [Numéro de téléphone]<br />
-        Adresse email : [Adresse email de contact]<br />
+      SPOT HOTELS CHR, SAS<br />
+      2 Rue Jean Baptiste de Maille 11 400 Castelnaudary<br />
+      Thierry DENIAU : 06 36 15 32 76 <br />
+      Catherine GIROUD : 06 98 23 87 64 <br />
+      Catherine.giroud@a2hfrance.fr<br />
       </p>
 
       <h3>Hébergeur du site :</h3>
       <p>
-        Nom de l&apos;hébergeur<br />
-        Adresse de l&apos;hébergeur<br />
-        Numéro de téléphone de l&apos;hébergeur<br />
+      Hetzner Online GmbH<br />
+      Industriestr. 25
+      91710 Gunzenhausen
+      Germany<br />
+      +49 (0)9831 505-0*<br />
       </p>
 
       <h3>Objet du site :</h3>

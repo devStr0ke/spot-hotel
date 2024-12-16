@@ -18,15 +18,19 @@ export default function ContactForm() {
         <div className={styles.infoBlocks}>
           <div className={styles.infoBlock}>
             <p className={styles.infoTitle}>Adresse</p>
-            <p className={styles.infoContent}>123 Rue Exemple, 75000 Paris</p>
+            <p className={styles.infoContent}>2 Rue Jean Baptiste de Maille,<br/>11 400 Castelnaudary</p>
           </div>
           <div className={styles.infoBlock}>
             <p className={styles.infoTitle}>Téléphone</p>
-            <p className={styles.infoContent}>+33 1 23 45 67 89</p>
+            <p className={styles.infoContent}>Mme : 06 98 23 87 64</p>
+            <p className={styles.infoContent}>Mr : 06 36 15 32 76</p>
+            
           </div>
           <div className={styles.infoBlock}>
             <p className={styles.infoTitle}>Email</p>
-            <p className={styles.infoContent}>contact@exemple.com</p>
+            <p className={styles.infoContent}>Mme : contact@exemple.com</p>
+            <p className={styles.infoContent}>Mr : contact@exemple.com</p>
+            
           </div>
         </div>
 
@@ -45,7 +49,8 @@ export default function ContactForm() {
           <p>Message</p>
           <textarea className={styles.messageBox} placeholder="Votre message" required />
           
-          <button type="submit" className={styles.submitButton}>Envoyer</button>
+          <button type="submit" className={styles.submitButton}>Envoyer à Mme Giroud</button>
+          <button type="submit" className={styles.submitButton}>Envoyer à Mr Deniaux  </button>
         </form>
       </div>
 

@@ -36,12 +36,14 @@
       padding: 2vw;
       box-sizing: border-box;
       text-align: center;
+
     }
   
     .item img {
       width: 100%;
       aspect-ratio: 1/1;
       object-fit: cover;
+
     }
   
     .item p {
@@ -130,12 +132,15 @@
       padding: 2vw;
       box-sizing: border-box;
       text-align: center;
+      
+      
     }
   
     .item img {
       width: 100%;
       aspect-ratio: 1/1;
       object-fit: cover;
+      box-shadow: var(--shadow);
     }
   
     .item p {
@@ -175,9 +180,15 @@
       border-radius: 50%;
       display: inline-block;
       border: 0.25vh solid var(--grey005);
+
+      transition: all 0.3 ease;
     }
   
     .dot.active {
       background-color: var(--grey005);
+    }
+
+    .dot:hover{
+      border: 0.33vh solid var(--grey005);
     }
   }

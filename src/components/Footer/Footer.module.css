@@ -4,11 +4,11 @@
       width: 100%;
       padding: 0vh;
       text-align: center;
-      background-color: var(--grey004);
+      background-color: var(--grey005);
     }
   
     .link {
-      color: var(--grey005);
+      color: var(--grey001);
       font-size: 1.5vh;
       font-family: "Heebo", sans-serif;
       font-weight: 400;
@@ -17,7 +17,7 @@
     }
   
     .link:hover {
-      color: var(--grey003);
+      color: var(--grey004);
     }
   }
   
@@ -27,11 +27,11 @@
       width: 100%;
       padding: 2vh;
       text-align: center;
-      background-color: var(--grey004);
+      background-color: var(--grey005);
     }
   
     .link {
-      color: var(--grey005);
+      color: var(--grey001);
       font-size: 0.9vw;
       font-family: "Heebo", sans-serif;
       font-weight: 400;
@@ -40,6 +40,6 @@
     }
   
     .link:hover {
-      color: var(--grey002);
+      color: var(--grey004);
     }
   }
