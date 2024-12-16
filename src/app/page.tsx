@@ -10,9 +10,10 @@ export default function Home() {
         <div className="text-content">
           <h1>Votre partenaire de confiance pour trouver le bien qui vous ressemble !</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus vestibulum purus, a maximus mauris tempus ac.
-            In nec mauris ut quam molestie maximus. Praesent venenatis gravida urna, eget eleifend ante lobortis id. Proin elementum vitae sapien at finibus.
-            Mauris nec ex arcu. Praesent et magna bibendum, rutrum nulla eu, ultrices nisl.
+          Chez Spot Hotel, nous mettons notre expertise de l'hôtellerie et de l'immobilier au service de vos projets. 
+          Spécialisés dans les biens de prestige, nous vous accompagnons avec une approche personnalisée et humaine. 
+          Que vous cherchiez à investir, vendre ou dénicher l'adresse parfaite, nous sommes là pour transformer vos 
+          ambitions en réalité.
           </p>
           <Link href="/annonces" className="OFFRE_INT_AnnoncesButton">
             voir les annonces
@@ -39,21 +40,20 @@ export default function Home() {
         <div className="text-content">
           <h1 className='APROPOS_h1'>Un savoir-faire reconnu et une approche sur-mesure !</h1>
           <p className='APROPOS_p'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus vestibulum purus, a maximus mauris tempus ac.
-            In nec mauris ut quam molestie maximus. Praesent venenatis gravida urna, eget eleifend ante lobortis id. Proin elementum vitae sapien at finibus.
-            Mauris nec ex arcu. Praesent et magna bibendum, rutrum nulla eu, ultrices nisl. Aenean tincidunt eu quam ut tristique.
-            Morbi dolor felis, dignissim vitae justo ac, placerat vulputate nisl. Donec nibh mi, facilisis a faucibus id, facilisis sit amet diam.
-            In nec erat malesuada, sagittis felis a, commodo metus. Proin sed felis quis libero posuere fermentum ac et libero.
+          Avec des décennies d'expérience dans l'hôtellerie et l'immobilier, nous mettons un point d'honneur à 
+          comprendre vos besoins. Chaque projet est une aventure que nous abordons avec rigueur et passion, 
+          en vous proposant des solutions adaptées à vos ambitions. Grâce à notre réseau et notre expertise, 
+          nous facilitons chaque étape pour faire de votre investissement une réussite sur-mesure.
           </p>
 
           <div className="APROPOS_xp">
             <div className="xp-square">
               <p>Experts immo&apos; depuis</p>
-              <h3>2006</h3>
+              <h3>2004</h3>
             </div>
             <div className="xp-square">
-              <p>Hôtelier de métier depuis</p>
-              <h3>1993</h3>
+              <p>d'expérience dans l'hôtellerie</p>
+              <h3>40 ans</h3>
             </div>
             <div className="xp-square">
               <p>Collaborateurs</p>

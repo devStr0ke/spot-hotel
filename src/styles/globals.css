@@ -3,15 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --grey001: #edeae5;
-  --grey002: #edeae5;
-  --grey003: #99a58f;
-  --grey004: #99a58f;
-  --grey005: #3e4f47;
-  --shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.25);
-  --shadow-hover: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
-  --shadow-Mobile: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-  --shadow-Mobile-hover: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --grey001: #fdf8ee;
+  --grey002: #fff5e2;
+  --grey003: #780000;
+  --grey004: #669bbc;
+  --grey005: #003049;
+  --shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.33);
+  --shadow-hover: 0px 3px 3px 0px rgba(0, 0, 0, 0.33);
+  --shadow-Mobile: 0px 2px 2px 0px rgba(0, 0, 0, 0.33);
+  --shadow-Mobile-hover: 0px 4px 4px 0px rgba(0, 0, 0, 0.33);
+  --TranslateUp:-4px;
+  --TranslateDown:4px;
+  --TranslateUp-Mobile:-2px;
+  --TranslateDown-Mobile:2px;
 }
 
 /* Common animations */
@@ -130,11 +134,12 @@
           font-size: 1.75vh;
           color: var(--grey001);
           box-shadow: var(--shadow-Mobile);
-          transition: box-shadow 0.2s ease, font-weight 0.2s ease;
+          transition: all 0.3s ease;
          
       }
   
-          .OFFRE_INT_AnnoncesButton:hover {
+          .OFFRE_INT_AnnoncesButton:active {
+            transform: translateY(var(--TranslateDown-Mobile));
               box-shadow: var(--shadow-Mobile-hover);
           }
   /*#endregion ====OFFRE INT*/   
@@ -151,6 +156,7 @@
   
           /*Ajout*/
           background-color:var(--grey001);
+          
       }
   
       /* Première ligne (text-content contenant h1 et p) */
@@ -198,7 +204,7 @@
           align-items: center;
           justify-content: center;
           margin-top: 2vh; /* Espace entre les xp-square */
-          background-color: var(--grey005);
+          background-color: var(--grey003);
           width: 90vw; /* Largeur responsive en fonction de l'écran */
           border-radius:2vh;
           box-shadow:var(--shadow-Mobile);
@@ -227,7 +233,7 @@
               margin-top: 6vw;
           }
   
-  /*#endregion ====APROPOS*/
+  /*#endregion ===APROPOS*/
   
   /*#region ====PARTENAIRES*/
   
@@ -255,7 +261,7 @@
   /*#endregion =============== Page Accueil*/
   }
 
-/* Desktop styles */
+/*====================================================================================== Desktop styles */
 @media (orientation: landscape) {
 
   html {
@@ -275,7 +281,7 @@
   }
 
   .accueil-page {
-    background: linear-gradient(135deg, var(--grey001) 0%, var(--grey002) 100%);
+    background: var(--grey002);
   }
 
   #OFFRE_INT {
@@ -286,6 +292,7 @@
     padding: 15vh 8vw 5vh;
     position: relative;
     overflow: hidden;
+    background-color: var(--grey001);
   }
 
   .text-content {
@@ -319,18 +326,18 @@
     object-fit: cover;
     border-radius: 0 0 0 15vh;
     box-shadow: var(--shadow);
-    transform: perspective(1000px) rotateY(-5deg);
+    /*transform: perspective(1000px) rotateY(-5deg);*/
     transition: all 0.5s ease;
     animation: scaleIn 1s ease-out;
   }
 
-  #OFFRE_INT img:hover {
+  /*#OFFRE_INT img:hover {
     transform: perspective(1000px) rotateY(0deg) translateZ(50px);
     box-shadow: var(--shadow-hover);
-  }
+  }*/
 
   .OFFRE_INT_AnnoncesButton {
-    background: linear-gradient(135deg, var(--grey005) 0%, #2c3c33 100%);
+    background-color:var(--grey003);
     padding: 1.5vh 3vw;
     border-radius: 2vh;
     text-decoration: none;
@@ -338,7 +345,7 @@
     font-weight: 500;
     font-size: 1.2vw;
     color: var(--grey001);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -347,11 +354,11 @@
   }
 
   .OFFRE_INT_AnnoncesButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: translateY(var(--TranslateDown));
+    box-shadow: var(--shadow-hover);
   }
 
-  .OFFRE_INT_AnnoncesButton::after {
+ /* .OFFRE_INT_AnnoncesButton::after {
     content: '';
     position: absolute;
     top: 0;
@@ -360,19 +367,21 @@
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
     transform: translateX(-100%);
-  }
+  }*/
 
-  .OFFRE_INT_AnnoncesButton:hover::after {
+  /*.OFFRE_INT_AnnoncesButton:hover::after {
     transform: translateX(100%);
     transition: transform 0.5s ease;
-  }
+  }*/
 
   #APROPOS_Container {
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 10vh 8vw;
-    background: var(--grey001);
+    background: var(--grey002);
+    /*box-shadow: var(--shadow);*/
+    box-shadow:  0px -6px 6px 0px rgba(0, 0, 0, 0.12), 0px 6px 6px 0px rgba(0, 0, 0, 0.12) ;
     position: relative;
     gap: 5vw;
   }
@@ -382,15 +391,16 @@
     height: auto;
     border-radius: 0 15vh 0 0;
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    transform: perspective(1000px) rotateY(5deg);
+    /*transform: perspective(1000px) rotateY(5deg);*/
+    box-shadow: var(--shadow);
     transition: all 0.5s ease;
     animation: scaleIn 1s ease-out;
   }
 
-  #APROPOS_Container img:hover {
+ /* #APROPOS_Container img:hover {
     transform: perspective(1000px) rotateY(0deg) translateZ(50px);
     box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-  }
+  }*/
 
   #APROPOS_Container .text-content {
     width: 45%;
@@ -426,7 +436,7 @@
   }
 
   #APROPOS_Container .APROPOS_xp .xp-square {
-    background: var(--grey005);
+    background: var(--grey003);
     padding: 1.5vh 2vw;
     border-radius: 2vh;
     box-shadow: var(--shadow);
@@ -440,7 +450,7 @@
   }
 
   #APROPOS_Container .APROPOS_xp .xp-square:hover {
-    transform: translateY(-5px);
+    transform: translateY(var(--TranslateUp));
     box-shadow: var(--shadow-hover);
   }
 
@@ -452,9 +462,9 @@
     text-align: center;
 }
 
-#APROPOS_Container .APROPOS_xp .xp-square h3 {
+#APROPOS_Container {
     color: var(--grey001) !important;
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin: 0;               
     order: 2; 
     text-align: center;
@@ -462,7 +472,7 @@
 
   #PARTENAIRES_Container {
     padding: 10vh 0;
-    background: white;
+    background: var(--grey001);
     text-align: center;
   }
 
