@@ -7,8 +7,8 @@ import Footer from '../components/Footer/Footer'
 const heebo = Heebo({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Your Site Name',
-  description: 'Your site description',
+  title: 'Spot Hotel',
+  description: 'Spot Hotel, votre partenaire de confiance pour trouver le bien qui vous ressemble !',
 }
 
 export default function RootLayout({
