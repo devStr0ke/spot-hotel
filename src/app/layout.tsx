@@ -8,7 +8,7 @@ const heebo = Heebo({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Spot Hotel',
-  description: 'Spot Hotel, votre partenaire de confiance pour trouver le bien qui vous ressemble !',
+  description: 'Spot Hotel, votre partenaire de confiance pour trouver le bien qui vous ressemble !!',
 }
 
 export default function RootLayout({
