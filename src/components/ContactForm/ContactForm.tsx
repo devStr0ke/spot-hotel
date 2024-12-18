@@ -4,10 +4,53 @@ import styles from './ContactForm.module.css'
 
 export default function ContactForm() {
   const [showOverlay, setShowOverlay] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    recipient: 'mme' // default value
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setShowOverlay(true)
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setShowOverlay(true)
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          recipient: 'mme'
+        })
+      } else {
+        alert('Erreur lors de l\'envoi du message. Veuillez réessayer.')
+      }
+    } catch (error) {
+      alert('Erreur lors de l\'envoi du message. Veuillez réessayer.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }))
   }
 
   return (
@@ -24,13 +67,11 @@ export default function ContactForm() {
             <p className={styles.infoTitle}>Téléphone</p>
             <p className={styles.infoContent}>Mme : 06 98 23 87 64</p>
             <p className={styles.infoContent}>Mr : 06 36 15 32 76</p>
-            
           </div>
           <div className={styles.infoBlock}>
             <p className={styles.infoTitle}>Email</p>
             <p className={styles.infoContent}>Mme : contact@exemple.com</p>
             <p className={styles.infoContent}>Mr : contact@exemple.com</p>
-            
           </div>
         </div>
 
@@ -38,19 +79,67 @@ export default function ContactForm() {
           <h2 className={styles.inputTitle}>Laissez-nous un message</h2>
           
           <p>Nom Prénom</p>
-          <input type="text" className={styles.input} placeholder="Votre nom et prénom" required />
+          <input 
+            type="text" 
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className={styles.input} 
+            placeholder="Votre nom et prénom" 
+            required 
+          />
 
           <p>Votre adresse mail</p>
-          <input type="email" className={styles.input} placeholder="Votre adresse mail" required />
+          <input 
+            type="email" 
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className={styles.input} 
+            placeholder="Votre adresse mail" 
+            required 
+          />
 
           <p>Objet du message</p>
-          <input type="text" className={styles.input} placeholder="Objet" required />
+          <input 
+            type="text" 
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            className={styles.input} 
+            placeholder="Objet" 
+            required 
+          />
 
           <p>Message</p>
-          <textarea className={styles.messageBox} placeholder="Votre message" required />
+          <textarea 
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className={styles.messageBox} 
+            placeholder="Votre message" 
+            required 
+          />
+
+          <p>Destinataire</p>
+          <select 
+            name="recipient"
+            value={formData.recipient}
+            onChange={handleChange}
+            className={styles.select}
+            required
+          >
+            <option value="mme">Mme Giroud</option>
+            <option value="mr">Mr Deniaux</option>
+          </select>
           
-          <button type="submit" className={styles.submitButton}>Envoyer à Mme Giroud</button>
-          <button type="submit" className={styles.submitButton}>Envoyer à Mr Deniaux  </button>
+          <button 
+            type="submit" 
+            className={styles.submitButton}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+          </button>
         </form>
       </div>
 
@@ -76,7 +165,10 @@ export default function ContactForm() {
           <div className={styles.overlayContent}>
             <h2>Merci !</h2>
             <p>Nous vous répondrons dans les plus brefs délais.</p>
-            <button className={styles.overlayButton} onClick={() => setShowOverlay(false)}>
+            <button 
+              className={styles.overlayButton} 
+              onClick={() => setShowOverlay(false)}
+            >
               Fermer
             </button>
           </div>

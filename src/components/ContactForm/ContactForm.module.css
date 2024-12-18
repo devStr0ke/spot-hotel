@@ -1,533 +1,170 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2rem;
+}
+
+.columnLeft {
+  flex: 2;
+  padding: 2rem;
+}
+
+.columnRight {
+  flex: 1;
+  padding: 2rem;
+}
+
+.title {
+  color: var(--grey005);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.infoBlocks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.infoBlock {
+  background-color: var(--grey002);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.infoTitle {
+  color: var(--grey005);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.infoContent {
+  color: var(--grey005);
+  margin: 0.25rem 0;
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputTitle {
+  color: var(--grey005);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--grey004);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.messageBox {
+  width: 100%;
+  min-height: 150px;
+  padding: 0.75rem;
+  border: 1px solid var(--grey004);
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--grey004);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.submitButton {
+  background-color: var(--grey003);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.submitButton:hover {
+  transform: translateY(var(--TranslateUp));
+  box-shadow: var(--shadow-hover);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlayContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.overlayButton {
+  background-color: var(--grey003);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.overlayButton:hover {
+  transform: translateY(var(--TranslateUp));
+  box-shadow: var(--shadow-hover);
+}
+
 /* Mobile styles */
 @media (orientation: portrait) {
-    .bodyLike {
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - 60px);
-      padding: 1.5vh 3vw;
-    }
-  
-    .page {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      width: 100%;
-    }
-  
-    .form {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      width: 100%;
-    }
-  
-    .image {
-      display: none;
-    }
-  
-    .columnLeft {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      width: 100%;
-    }
-  
-    .title {
-      color: var(--grey005);
-      font-size: 2.5vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 700;
-      line-height: 10vh;
-    }
-  
-    .infoBlocks {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 1vh;
-      width: 95%;
-      margin: 1vh;
-      padding: 3vh;
-      border-radius: 0 4vh 0 0;
-      background-color:var(--grey001);
-      box-shadow: var(--shadow-Mobile);
-    }
-  
-    .infoBlock {
-      text-align: left;
-    }
-  
-    .infoTitle {
-      color: var(--grey005);
-      font-size: 1.5vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 600;
-      line-height: 1.5vh;
-      margin-bottom: 0.5vh;
-      text-align: center;
-    }
-  
-    .infoContent {
-      color: var(--grey005);
-      font-size: 1.5vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1.5vh;
-      text-align: center;
-    }
-  
-    .inputSection {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      padding: 1vh 1.5vw;
-    }
-  
-    .inputSection p {
-      color: var(--grey005);
-      font-size: 1.5vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1vh;
-      text-align: left;
-    }
-  
-    .inputTitle {
-      color: var(--grey005);
-      font-size: 2.5vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 700;
-      line-height: 8vh;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  
-    .input {
-      border: none;
-      border-bottom: 3px solid #333;
-      padding: 0.5vh 0.25vw;
-      width: 100%;
-      margin-bottom: 15px;
-      color: var(--grey005);
-      font-size: 1.5vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 4vh;
-      text-align: left;
-      background-color:var(--grey001);
-    }
-      
-    .input::placeholder {
-      color: var(--grey004);
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 4vh;
-      text-align: left;
-    }
-      
-    .input:focus {
-      outline: none;
-    }
-    
-    .messageBox {
-      /* Inherit all styles from input */
-      border: none;
-      border-bottom: 3px solid #333;
-      padding: 0.5vh 0.25vw;
-      width: 100%;
-      margin-bottom: 15px;
-      color: var(--grey005);
-      font-size: 1.5vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 4vh;
-      text-align: left;
-      background-color: var(--grey001);
-      /* Add specific styles for messageBox */
-      height: 15vh;
-      resize: none; /* Prevents textarea resizing */
-    }
-    
-    .messageBox::placeholder {
-      color: var(--grey004);
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 4vh;
-      text-align: left;
-    }
-    
-    .messageBox:focus {
-      outline: none;
-    }
-  
-    .columnRight {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      text-align: center;
-      margin-top: 20px;
-      gap: 15px;
-    }
-  
-    .infoSection {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      gap: 10px;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    .contactDetail {
-      text-align: left;
-    }
-  
-    .contactDetail p {
-      color: var(--grey005);
-      font-size: 1.25vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1.25vh;
-    }
-  
-    .submitButton {
-      background-color: var(--grey005);
-      border: none;
-      padding: 2vh 4vw;
-      margin-top: 1vh;
-      margin-bottom: 0.5vh;
-      cursor: pointer;
-      width: 100%;
-      text-align: center;
-      border-radius: 2vh 0 0 0;
-      box-shadow: var(--shadow-Mobile);
-      color: var(--grey001);
-      font-size: 2vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1.5vh;
-      transition: all 0.3s ease;
-    }
-  
-    .submitButton:active {
-      box-shadow: var(--shadow-Mobile-hover);
-      transform: translateY(var(--TranslateDown-Mobile));
-    }
-  
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-  
-    .overlay.active {
-      display: flex;
-    }
-  
-    .overlayContent {
-      background: var(--grey001);
-      padding: 6vh 3vw;
-      text-align: center;
-      border-radius: 0 0 0 12vh;
-      box-shadow: var(--shadow);
-    }
-  
-    .overlayContent h2 {
-      font-size: 3vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 600;
-      line-height: 4vh;
-    }
-  
-    .overlayContent p {
-      font-size: 1.5vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1.5vh;
-    }
-  
-    .overlayButton {
-      background-color: var(--grey005);
-      color: var(--grey001);
-      border: none;
-      padding: 1.5vh 4vh;
-      font-size: 2vh;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 2vh;
-      cursor: pointer;
-      margin-top: 2vh;
-      align-self: flex-start;
-      border-radius: 3vh;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-  
-    .overlayButton:active {
-      box-shadow: var(--shadow-Mobile-hover);
-      transform: translateY(--TranslateDown-Mobile);
-    }
+  .form {
+    flex-direction: column;
   }
-  
-  /* Desktop styles */
-@media (orientation: landscape) {
-    .bodyLike {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--grey001);
-      min-height: calc(100vh);
-    }
-  
-    .page {
-      display: flex;
-      width: 100%;
-      max-width: 100%;
-      margin-top: 5%;
-    }
-  
-    .image img {
-      width: 40vw;
-      height: auto;
-      object-fit: cover;
-      margin: 4vh;
-      box-shadow: var(--shadow);
-      border-radius: 0 16vh 0 0;
-    }
-  
-    .form {
-      display: flex;
-      flex-grow: 1.5;
-      padding: 2vh;
-    }
-  
-    .columnLeft {
-      width: 70%;
-      padding: 1vh;
-    }
-  
-    .columnRight {
-      width: 30%;
-      padding: 1vh;
-    }
-  
-    .title {
-      color: var(--grey005);
-      font-size: 3vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 700;
-      line-height: 2.5;
-      margin-bottom: 0vh;
-    }
-  
-    .infoBlocks {
-      display: flex;
-      flex-direction: row;
-      gap: 2vh;
-      margin-bottom: 5vh;
-    }
-  
-    .infoBlock {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .infoTitle {
-      color: var(--grey005);
-      font-size: 0.75vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 200;
-      line-height: 3vw;
-    }
-  
-    .infoContent {
-      color: var(--grey005);
-      font-size: 0.75vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1vw;
-    }
-  
-    .inputTitle {
-      color: var(--grey005);
-      font-size: 1.75vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 700;
-      line-height: 1.125;
-      margin-bottom: 4vh;
-    }
-  
-    .inputSection {
-      display: flex;
-      flex-direction: column;
-      background-color: var(--grey001);
-    }
-  
-    .inputSection p {
-      color: var(--grey005);
-      font-size: 0.75vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 2vw;
-    }
-  
-    .input {
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid #333;
-      margin: 10px 0;
-      padding: 5px 0;
-      color: var(--grey005);
-      font-size: 1vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 500;
-      line-height: 1vw;
-      background-color: var(--grey001);
-    }
-  
-    .input::placeholder {
-      color: var(--grey004);
-      font-size: 1vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 500;
-      line-height: 1vw;
-    }
-  
-    .input:focus {
-      outline: none;
-    }
-  
-    .messageBox {
-      /* Inherit all styles from input */
-      border: none;
-      border-bottom: 1px solid #333;
-      margin: 10px 0;
-      padding: 5px 0;
-      color: var(--grey005);
-      font-size: 1vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 500;
-      line-height: 1vw;
-      background-color: var(--grey001);
-      /* Add specific styles for messageBox */
-      height: 16vh;
-      resize: none;
-    }
-  
-    .messageBox::placeholder {
-      color: var(--grey004);
-      font-size: 1vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 500;
-      line-height: 1vw;
-    }
-  
-    .messageBox:focus {
-      outline: none;
-    }
-  
-    .contactDetail {
-      margin: 10px 0;
-      color: var(--grey005);
-      font-size: 0.75vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 0.75vw;
-    }
-  
-    .submitButton {
-      background-color: var(--grey005);
-      color: var(--grey001);
-      border: none;
-      padding: 1.5vh 4vh;
-      font-size: 1.125vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1.125vw;
-      cursor: pointer;
-      margin-top: 2vh;
-      
-      align-self: flex-end;
-      border-radius: 3vh 0 0 0;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-  
-    .submitButton:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(--TranslateDown);
-    }
-  
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-  
-    .overlay.active {
-      display: flex;
-    }
-  
-    .overlayContent {
-      background: var(--grey001);
-      padding: 6vh 3vw;
-      text-align: center;
-      border-radius: 0 0 0 12vh;
-      box-shadow: var(--shadow);
-    }
-  
-    .overlayContent p {
-      font-size: 1vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1vw;
-    }
-  
-    .overlayContent h2 {
-      font-size: 2vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 600;
-      line-height: 2vw;
-    }
-  
-    .overlayContent button {
-      background-color: var(--grey005);
-      color: var(--grey001);
-      border: none;
-      padding: 1.5vh 4vh;
-      font-size: 1.125vw;
-      font-family: "Heebo", sans-serif;
-      font-weight: 400;
-      line-height: 1.125vw;
-      cursor: pointer;
-      margin-top: 2vh;
-      align-self: flex-start;
-      border-radius: 3vh;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-  
-    .overlayContent button:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(--TranslateDown);
-    }
+
+  .columnLeft {
+    padding: 1rem;
   }
+
+  .columnRight {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}
