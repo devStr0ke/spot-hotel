@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       from: `"Contact Form" <noreply@spot-hotel.com>`,
-      replyTo: 'samueltomar@hotmail.com',
+      replyTo: recipientEmail,
       to: recipientEmail,
       subject: `Nouveau message de contact: ${subject}`,
       html: `
