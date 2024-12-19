@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useAnimation } from 'framer-motion'
@@ -19,7 +19,25 @@ export default function CarouselAnnonces({ type, items }: CarouselProps) {
   const [showOverlay, setShowOverlay] = useState(false)
   const [selectedItem, setSelectedItem] = useState(items[0])
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [constraints, setConstraints] = useState({ left: 0, right: 0 })
   const controls = useAnimation()
+
+  // Calculate constraints after component mounts
+  useEffect(() => {
+    const calculateConstraints = () => {
+      const itemWidth = window.innerWidth * 0.4
+      const maxIndex = items.length - Math.floor(window.innerWidth / itemWidth)
+      setConstraints({
+        left: -((items.length - 2) * itemWidth),
+        right: 0
+      })
+    }
+
+    calculateConstraints()
+    window.addEventListener('resize', calculateConstraints)
+    
+    return () => window.removeEventListener('resize', calculateConstraints)
+  }, [items.length])
 
   const openOverlay = (item: typeof items[0]) => {
     setSelectedItem(item)
@@ -31,6 +49,7 @@ export default function CarouselAnnonces({ type, items }: CarouselProps) {
     setShowOverlay(false)
     document.body.classList.remove(styles.bodyLock)
   }
+
   const scroll = async (direction: 'left' | 'right') => {
     const itemWidth = window.innerWidth * 0.4
     const maxIndex = items.length - Math.floor(window.innerWidth / itemWidth)
@@ -99,10 +118,7 @@ export default function CarouselAnnonces({ type, items }: CarouselProps) {
         <motion.div 
           className={styles.carouselItems}
           drag="x"
-          dragConstraints={{
-            left: -((items.length - 2) * window.innerWidth * 0.4),
-            right: 0
-          }}
+          dragConstraints={constraints}
           dragElastic={0.1}
           dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
           onDragEnd={onDragEnd}
