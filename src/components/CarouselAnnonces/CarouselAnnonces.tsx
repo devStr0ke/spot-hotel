@@ -24,8 +24,13 @@ export default function CarouselAnnonces({ type, items }: CarouselProps) {
   const openOverlay = (item: typeof items[0]) => {
     setSelectedItem(item)
     setShowOverlay(true)
+    document.body.classList.add(styles.bodyLock)
   }
 
+  const closeOverlay = () => {
+    setShowOverlay(false)
+    document.body.classList.remove(styles.bodyLock)
+  }
   const scroll = async (direction: 'left' | 'right') => {
     const itemWidth = window.innerWidth * 0.4
     const maxIndex = items.length - Math.floor(window.innerWidth / itemWidth)
@@ -136,7 +141,7 @@ export default function CarouselAnnonces({ type, items }: CarouselProps) {
         <div className={styles.overlayContent}>
           <button 
             className={styles.overlayClose}
-            onClick={() => setShowOverlay(false)}
+            onClick={closeOverlay}
           >
             ×
           </button>

@@ -1,3 +1,10 @@
+/* Global styles */
+.bodyLock {
+  overflow: hidden;
+  height: 100vh;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+}
 /* Mobile styles */
 @media (orientation: portrait) {
   .carouselSection {
@@ -137,6 +144,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    z-index: 10000; /* Ensure overlay is above everything */
+    backdrop-filter: blur(10px); /* Optional: adds a slight blur effect */
   }
 
   .overlay.active {
@@ -368,6 +377,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    z-index: 10000; /* Ensure overlay is above everything */
+    backdrop-filter: blur(10px); /* Optional: adds a slight blur effect */
   }
 
   .overlay.active {
