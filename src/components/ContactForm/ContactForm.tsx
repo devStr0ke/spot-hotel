@@ -142,7 +142,7 @@ export default function ContactForm() {
             required
           >
             <option value="mme">Mme Giroud</option>
-            <option value="mr">Mr Deniaux</option>
+            <option value="mr">Mr Deniau</option>
           </select>
           
           <button 
