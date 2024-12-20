@@ -2,20 +2,30 @@
 import { useState } from 'react'
 import styles from './ContactForm.module.css'
 
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  recipient: 'mme' | 'mr';
+}
+
 export default function ContactForm() {
   const [showOverlay, setShowOverlay] = useState(false)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
     message: '',
-    recipient: 'mme' // default value
+    recipient: 'mme'
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
     try {
       const response = await fetch('/api/contact', {
@@ -25,6 +35,8 @@ export default function ContactForm() {
         },
         body: JSON.stringify(formData),
       })
+
+      const data = await response.json()
 
       if (response.ok) {
         setShowOverlay(true)
@@ -37,10 +49,10 @@ export default function ContactForm() {
           recipient: 'mme'
         })
       } else {
-        alert('Erreur lors de l\'envoi du message. Veuillez réessayer.')
+        setError(data.error?.message || 'Une erreur est survenue. Veuillez réessayer.')
       }
     } catch (error) {
-      alert('Erreur lors de l\'envoi du message. Veuillez réessayer.')
+      setError('Une erreur est survenue. Veuillez réessayer.')
     } finally {
       setIsSubmitting(false)
     }
@@ -70,8 +82,8 @@ export default function ContactForm() {
           </div>
           <div className={styles.infoBlock}>
             <p className={styles.infoTitle}>Email</p>
-            <p className={styles.infoContent}>Mme : contact@exemple.com</p>
-            <p className={styles.infoContent}>Mr : contact@exemple.com</p>
+            <p className={styles.infoContent}>Mme : c.giroud@spot-hotel.com</p>
+            <p className={styles.infoContent}>Mr : t.deniau@spot-hotel.com</p>
           </div>
         </div>
 
@@ -130,7 +142,7 @@ export default function ContactForm() {
             required
           >
             <option value="mme">Mme Giroud</option>
-            <option value="mr">Mr Deniaux</option>
+            <option value="mr">Mr Deniau</option>
           </select>
           
           <button 
